@@ -1,3 +1,220 @@
-// Place all the styles related to the welcome controller here.
-// They will automatically be included in application.scss.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "imagehover";
+#headerwrap{
+  background: url("bg.png") no-repeat center top;
+  /*background-position: center;*/
+  background-color: #000000;
+  margin-top: -10px;
+  padding-top: 20px;
+  text-align: center;
+  min-height: 500px;
+  width: 100%;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#headerwrap h1 {
+  margin-top: 100px;
+  color: #ff7878;
+  font-weight: 300;
+}
+
+#headerwrap h2 {
+  color: #fff;
+  text-shadow: 1px 1px 2px black, 0 0 1em red;
+  letter-spacing: 2px;
+  font-size: 18px;
+  padding: 10px;
+}
+
+
+.w {
+  padding-top: 35px;
+}
+
+.w h4 {
+  font-size: 25px;
+  color: #ff7878;
+}
+
+.w i.fa, .w .far {
+  color: #ff7878;
+}
+
+#dg {
+  background: #e0e0e0;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+#dg h4 {
+  font-size: 30px;
+  color: #ff7878;
+}
+
+.tilt{
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.tilt:hover {
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+
+.wb {
+  padding-top: 35px;
+}
+
+.wb h4 {
+  font-size: 35px;
+  color: #ff7878;
+}
+
+#lg {
+  background: #ebebeb;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+#lg h4 {
+  font-size: 45px;
+}
+
+#r {
+  background: #ff7878;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+#r h4 {
+  color: #ffffff;
+  font-size: 45px;
+}
+
+#r p {
+  color: #ffffff;
+}
+
+#footer {
+  background: #2d2d2d;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+#footer i {
+  color: #bdbdbd;
+  font-size: 30px;
+  padding: 20px;
+}
+
+#footer i:hover {
+  color: #ff7878;
+}
+
+.box-shadow {
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.35);
+}
+/*SERVICE LIST*/
+
+.services_list .card-body {
+  padding: 3.25rem 1rem;
+}
+#breadcrambs {
+  background-color: #ff7878;
+  margin-bottom: 20px;
+  margin-top: 80px;
+}
+/*Service*/
+.service {
+  padding-bottom: 25px;
+}
+.service img.card-img-top {
+  margin-bottom: 20px;
+}
+
+.project {
+  padding-bottom: 25px;
+}
+.project img.project_img_top {
+  margin-bottom: 20px;
+}
+
+.countries_list{
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.project_list_item{
+  padding-bottom: 28px;
+}
+.sidebar_realties_list li{
+  padding-bottom: 25px;
+}
+.sidebar_realties_list li img{
+  width: 100%;
+}
+
+/*Extra small devices (portrait phones, less than 576px)*/
+/*No media query for `xs` since this is the default in Bootstrap*/
+
+/*Small devices (landscape phones, 576px and up)*/
+@media screen and (max-width: 768px) {
+  #headerwrap h1 {
+    margin-top: 100px;
+    color: #ff7878;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 3px;
+  }
+  #headerwrap h2 {
+    color: #fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em red;
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+}
+/*Large devices (desktops, 992px and up)*/
+@media screen and (max-width: 992px) {
+  #headerwrap h1 {
+    margin-top: 100px;
+    color: #ff7878;
+    font-size: 45px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  }
+  #headerwrap h2 {
+    color: #fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em red;
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: transparent;
+  }
+}
+/*Extra large devices (large desktops, 1200px and up)*/
+@media screen and (min-width: 993px) {
+  #headerwrap h1 {
+    margin-top: 100px;
+    color: #ff7878;
+    font-size: 60px;
+    font-weight: 300;
+    letter-spacing: 3px;
+  }
+
+  #headerwrap h2 {
+    color: #fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em red;
+    font-size: 25px;
+    letter-spacing: 2px;
+    background-color: transparent;
+  }
+}
