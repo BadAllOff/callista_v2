@@ -9,12 +9,13 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <title>CallistaV2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
@@ -111,14 +112,6 @@
       </div>
     </div>
 
-    <div id="footer">
-      <div class="container">
-        <div class="row centered">
-          <a href="#"><i class="fab fa-twitter-square"></i></a>
-          <a href="#"><i class="fab fa-facebook-square"></i></a>
-          <a href="#"><i class="fas fa-door-open"></i></a>
-        </div>
-      </div>
-    </div>
+    <%= render partial: 'shared/footer' %>
   </body>
 </html>

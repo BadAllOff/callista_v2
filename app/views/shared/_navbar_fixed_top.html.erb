@@ -12,8 +12,8 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="active" href="index.html">ABOUT US</a></li>
-        <li><%= link_to 'SEVICES', services_path %></li>
+        <li><%= active_link_to 'ABOUT US', root_path, active: :exclusive %></li>
+        <li><%= active_link_to 'SERVICES', services_path %></li>
         <li><a href="projects.html">PROJECTS</a></li>
         <li><a href="countries.html">REALTY</a></li>
         <li><a href="contacts.html"><i class="fa fa-envelope"></i><span class="visible-xs-inline"> CONTACT</span></a></li>
