@@ -41,6 +41,7 @@ gem 'jquery-rails', '~> 4.3.3'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.2.0'
 gem 'active_link_to', '~> 1.0.5'
+gem 'image_processing', '~> 1.6.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -51,6 +52,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7'
   gem 'factory_bot_rails', '~> 4.10.0'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'pry', '~> 0.11.3'
 end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

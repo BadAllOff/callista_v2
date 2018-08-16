@@ -5,6 +5,6 @@ In order to add Consulting Services
 to website
 } do
 
- scenaraio 'Create service with valid data' do
+ scenario 'Create service with valid data' do
  end
 end

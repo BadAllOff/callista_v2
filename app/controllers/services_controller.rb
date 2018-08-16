@@ -1,10 +1,11 @@
 class ServicesController < ApplicationController
   before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :set_recommended_services, only: [:show]
 
   # GET /services
   # GET /services.json
   def index
-    @services = Service.all
+    @services = Service.with_attached_preview_img.all
   end
 
   # GET /services/1
@@ -67,8 +68,12 @@ class ServicesController < ApplicationController
       @service = Service.find(params[:id])
     end
 
+    def set_recommended_services
+      @recommended_services = Service.all.where.not(id: params[:id]).limit(10)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def service_params
-      params.require(:service).permit(:title, :preview, :description)
+      params.require(:service).permit(:title, :preview, :description, :preview_img)
     end
 end
