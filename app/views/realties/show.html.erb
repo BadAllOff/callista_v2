@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @realty.title %>
+</p>
+
+<p>
+  <b>Preview:</b>
+  <%= @realty.preview %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @realty.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_country_realty_path(@realty.country, @realty) %> |
+<%= link_to 'Back', country_realties_path(@realty.country) %>

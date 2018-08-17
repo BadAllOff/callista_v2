@@ -1,0 +1,27 @@
+<h1>Listing realties</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Preview</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @realties.each do |realty| %>
+  <tr>
+    <td><%= realty.title %></td>
+    <td><%= realty.preview %></td>
+    <td><%= realty.description %></td>
+    <td><%= link_to 'Show', [realty.country, realty] %></td>
+    <td><%= link_to 'Edit', edit_country_realty_path(realty.country, realty) %></td>
+    <td><%= link_to 'Destroy', [realty.country, realty], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Realty', new_country_realty_path(params[:country_id]) %>

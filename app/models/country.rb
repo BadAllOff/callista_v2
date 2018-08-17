@@ -1,5 +1,5 @@
 class Country < ApplicationRecord
-  has_one_attached :flag_img
+  has_many :realties, dependent: :destroy
   has_one_attached :flag_img
 
   def flag_thumbnail

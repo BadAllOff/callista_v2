@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_17_225720) do
+ActiveRecord::Schema.define(version: 2018_08_17_233731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 2018_08_17_225720) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "realties", force: :cascade do |t|
+    t.bigint "country_id"
+    t.string "title", null: false
+    t.text "preview", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_realties_on_country_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "title", default: "Service title", null: false
     t.string "preview", default: "Service preview", null: false
@@ -72,4 +82,5 @@ ActiveRecord::Schema.define(version: 2018_08_17_225720) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "realties", "countries"
 end
