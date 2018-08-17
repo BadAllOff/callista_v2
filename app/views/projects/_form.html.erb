@@ -21,7 +21,7 @@
   <div class="form-group">
     <%= form.label :start_datetime, class: "control-label col-sm-2" %>
       <div class="col-sm-10">
-        <%= form.datetime_select :start_datetime, class: "form-control" %>
+        <%= form.text_field :start_datetime, id: 'datetimepicker1', class: "form-control" %>
       </div>
   </div>
 
@@ -52,3 +52,12 @@
     </div>
   </div>
 <% end %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(function () {
+      $('#datetimepicker1').datetimepicker({
+        format: "YYYY-MM-DD HH:mm"
+      });
+    });
+  });
+</script>
