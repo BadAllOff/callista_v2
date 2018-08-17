@@ -5,7 +5,6 @@ class Service < ApplicationRecord
   validate :preview_img_type
 
   def thumbnail
-    # self.preview_img.variant(resize: '360x225!').processed
     self.preview_img.variant(combine_options: {thumbnail: "360X360^", gravity: "center", extent: "360x225"}).processed
   end
 

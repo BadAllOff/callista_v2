@@ -1,0 +1,40 @@
+<%= form_with(model: country, local: true, class: "form-horizontal") do |form| %>
+  <% if country.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(country.errors.count, "error") %> prohibited this country from being saved:</h2>
+
+      <ul>
+      <% country.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name, class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :description, class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.cktext_area :description, ckeditor: { language: 'ru'} %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :flag_img, class: "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.file_field :flag_img %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10 action">
+      <%= form.submit 'Save Country', class: 'btn btn-default' %>
+    </div>
+  </div>
+<% end %>

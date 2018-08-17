@@ -4,7 +4,6 @@ class Project < ApplicationRecord
   validates :title, :preview, :description, presence: true
 
   def thumbnail
-    # self.preview_img.variant(resize: '360x225!').processed
     self.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed
   end
 
