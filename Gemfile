@@ -42,6 +42,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.2.0'
 gem 'active_link_to', '~> 1.0.5'
 gem 'image_processing', '~> 1.6.0'
+gem 'ckeditor', '~> 4.2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
