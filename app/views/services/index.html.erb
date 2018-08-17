@@ -1,15 +1,13 @@
 <div id="breadcrambs">
   <div class="container">
-    <!--<ol class="breadcrumb">-->
-      <!--<li><a href="/ru">Главная</a></li>-->
-      <!--<li><a href="services.html">Услуги</a></li>-->
-    <!--</ol>-->
+    <ol class="breadcrumb">
+      <li><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'Услуги', services_path %></li>
+    </ol>
   </div>
 </div>
 <%= flash_messages %>
 <div class="container services_list">
-  <%= link_to 'New Service', new_service_path, class: "btn btn-lg btn-outline-danger" %>
-  <hr>
   <div class="row">
     <% @services.each do |service| %>
       <div class="col-md-4">
@@ -30,5 +28,7 @@
       </div>
     <% end %>
   </div>
+  <hr>
+  <%= link_to 'New Service', new_service_path, class: "btn btn-lg btn-outline-danger" %>
 </div>
 

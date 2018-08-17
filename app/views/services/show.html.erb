@@ -1,9 +1,9 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><a href="/ru">Главная</a></li>
-      <li><a href="services.html">Услуги</a></li>
-      <li><a href="/ru/services/4"><%= @service.title %></a></li>
+      <li><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'Услуги', services_path %></li>
+      <li><%= link_to @service.title, @service %></li>
     </ol>
   </div>
 </div>

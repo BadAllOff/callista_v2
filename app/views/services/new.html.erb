@@ -1,7 +1,17 @@
+<div id="breadcrambs">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'Услуги', services_path %></li>
+      <li><%= link_to 'New Service', new_service_path %></li>
+    </ol>
+  </div>
+</div>
+
 <div class="container">
   <h1>New Service</h1>
 
   <%= render 'form', service: @service %>
 
-  <%= link_to 'Back', services_path %>
+  <%= link_to 'Back', services_path, class: 'btn btn-sm btn-outline-secondary' %>
 </div>
