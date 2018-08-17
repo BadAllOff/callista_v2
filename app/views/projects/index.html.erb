@@ -1,7 +1,7 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><a href="index.html">Главная</a></li>
+      <li><%= link_to 'Главная', root_path %></li>
       <li><%= link_to 'Проекты', projects_path %></li>
     </ol>
   </div>
@@ -11,9 +11,9 @@
     <% @projects.each do |project| %>
     <div class="row">
       <div class="col-md-7">
-        <a href="#">
-          <img class="img-responsive" src="img/652x280.png" alt="">
-        </a>
+        <% if project.preview_img.attached? %>
+          <%= image_tag project.thumbnail, class: "img-responsive" %>
+        <% end %>
       </div>
       <div class="col-md-5">
         <h3><%= project.title %></h3>

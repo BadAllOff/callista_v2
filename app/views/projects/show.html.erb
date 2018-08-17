@@ -1,8 +1,9 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><a href="index.html">Главная</a></li>
+      <li><%= link_to 'Главная', root_path %></li>
       <li><%= link_to 'Проекты', projects_path %></li>
+      <li><%= link_to @project.title, project_path(@project) %></li>
     </ol>
   </div>
 </div>
@@ -14,7 +15,10 @@
       <hr>
       <p class="text-muted">Дата мероприятия: <%= @project.start_datetime %></p>
       <hr>
-      <img class="img-responsive project_img_top box-shadow img-rounded" src="img/750x484.png" style="width: 100%;" alt="">
+      <% if @project.preview_img.attached? %>
+        <%= image_tag @project.thumbnail, class: "img-responsive project_img_top box-shadow img-rounded", style: "width: 100%" %>
+      <% end %>
+      <!--<img class="" src="img/750x484.png" style="width: 100%;" alt="">-->
       <%= @project.description.html_safe %>
       <hr>
       <div class="btn-group">

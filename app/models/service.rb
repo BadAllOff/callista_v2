@@ -1,6 +1,4 @@
 class Service < ApplicationRecord
-  # scope :with_eager_loaded_preview_img, -> { eager_load(preview_img_attachment: :blob) }
-
   has_one_attached :preview_img
 
   validates :title, :preview, :description, presence: true
