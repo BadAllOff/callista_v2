@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_recommended_projects, only: [:show]
 
   # GET /projects
   # GET /projects.json
@@ -65,6 +66,10 @@ class ProjectsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])
+    end
+
+    def set_recommended_projects
+      @recommended_projects = Project.all.where.not(id: params[:id]).limit(10)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

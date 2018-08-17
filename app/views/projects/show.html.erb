@@ -27,6 +27,7 @@
         <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
       </div>
     </div>
+
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -34,55 +35,23 @@
         </div>
         <div class="panel-body">
           <ul class="list-inline">
-            <li>
-              <a href="project.html">
-                <h4>Müştəriyə yönləndirilmiş xidmətin göstərilməsi və çarpaz satışın əsasları</h4>
-                <p class="text-muted">Дата мероприятия: Февр. 26, 2017</p>
+            <% @recommended_projects.each do |project| %>
+              <li>
+                <%= link_to project do %>
+                  <h4><%= project.title %></h4>
+                  <p class="text-muted">Дата мероприятия: <%= project.start_datetime %></p>
 
-                <p class="list-group-item-text">
-                  Adı çəkilən seminar 26 fevral (bazar günü) saat 12:00-da Jala Plazada keçiriləcək. Qeydiyyatın son tarixi 21 fevral. Seminar ödənişlidir. Daha ətraflı məlumat əldə etmək üçün 055 2818001 nömrəsi ilə əlaqə saxalayaraq / whatsapp və ya callistabaku@gmail.com ünvanına müraciət edə bilərsiniz.
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="service.html">
-                <h4>Консалтинговые услуги в Чехии.</h4>
-                <p>
-                  Предлагаем консалтинговые услуги в Чехии, по следующим вопросам: - оформление бизнеса, покупка и продажа бизнеса, , получение требуемых сертификатов и
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="service.html">
-                <h4>Консалтинговые услуги в ОАЭ.
-                </h4>
-                <p>
-                  Предлагаем консалтинговые услуги в ОАЭ по следующим вопросам: - оформление бизнеса, покупка и продажа бизнеса, регистрация в фри зонах или оффшор,
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="service.html">
-                <h4>
-                  Консалтинговые услуги в Сингапуре, Малайзии, Вьетнаме, Таиланде и Австралии.
-                </h4>
-                <p>
-                  Предлагаем  консалтинговые услуги в Сингапуре, Малайзии, Таиланде, Вьетнаме, Австралии по следующим вопросам: - оформление бизнеса, покупка и продажа
-                </p>
-              </a>
-            </li>
-            <li>
-              <a href="service.html">
-                <h4>Услуги в Азербайджане.</h4>
-                <p>
-                  Предлагаем консалтинговые услуги в Азербайджане по следующим вопросам:
-                </p>
-              </a>
-            </li>
+                  <p class="list-group-item-text">
+                    <%= strip_tags(project.preview)%>
+                  </p>
+                <% end %>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
     </div>
+
   </div>
   <%= link_to 'Back', projects_path, class: "btn btn-sm btn-outline-secondary" %>
 </div>

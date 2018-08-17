@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-7">
         <% if project.preview_img.attached? %>
-          <%= image_tag project.thumbnail, class: "img-responsive" %>
+          <%= image_tag project.thumbnail, class: "img-responsive", style: "padding-top:20px;" %>
         <% end %>
       </div>
       <div class="col-md-5">
@@ -29,6 +29,5 @@
     </div>
     <hr>
   <% end %>
-  <hr>
   <%= link_to 'New Project', new_project_path, class: "btn btn-sm btn-outline-danger" %>
 </div>
