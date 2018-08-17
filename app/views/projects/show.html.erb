@@ -10,7 +10,7 @@
 <%= flash_messages %>
 <div class="container">
   <div class="row">
-    <div class="col-md-8 project">
+    <article class="col-md-8 project">
       <h1><%= @project.title %></h1>
       <hr>
       <p class="text-muted">Дата мероприятия: <%= @project.start_datetime %></p>
@@ -26,9 +26,9 @@
         <%= link_to 'Edit', edit_project_path(@project), class: "btn btn-sm btn-outline-secondary" %>
         <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
       </div>
-    </div>
+    </article>
 
-    <div class="col-md-4">
+    <aside class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4>Projects</h4>
@@ -50,7 +50,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </aside>
 
   </div>
   <%= link_to 'Back', projects_path, class: "btn btn-sm btn-outline-secondary" %>

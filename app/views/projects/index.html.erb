@@ -18,8 +18,9 @@
       <div class="col-md-5">
         <h3><%= project.title %></h3>
         <p class="text-muted">Дата мероприятия: <%= project.start_datetime %></p>
-        <%= project.preview.html_safe %>
-        <br>
+        <section style="height: 170px; overflow: hidden;">
+          <%= project.preview.html_safe %>
+        </section>
         <div class="btn-group">
           <%= link_to 'Show', project, class: "btn btn-sm btn-outline-danger" %>
           <%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-outline-secondary" %>
