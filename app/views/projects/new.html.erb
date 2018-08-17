@@ -1,0 +1,16 @@
+<div id="breadcrambs">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><a href="index.html">Главная</a></li>
+      <li><%= link_to 'Проекты', projects_path %></li>
+    </ol>
+  </div>
+</div>
+<%= flash_messages %>
+<div class="container">
+  <h1>New Project</h1>
+
+  <%= render 'form', project: @project %>
+
+  <%= link_to 'Back', projects_path %>
+</div>
