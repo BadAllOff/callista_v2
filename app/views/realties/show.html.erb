@@ -1,20 +1,104 @@
-<p id="notice"><%= notice %></p>
+<div id="breadcrambs">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to @country.name, country_realties_path(@country) %></li>
+      <li><%= link_to @realty.title, country_realty_path(@country, @realty) %></li>
+    </ol>
+  </div>
+</div>
 
-<p>
-  <b>Title:</b>
-  <%= @realty.title %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 project">
+      <h1><%= @realty.title %></h1>
+      <hr>
+      <% if @realty.preview_img.attached? %>
+        <%= image_tag @realty.main_preview_img_header_variant, class: "img-responsive project_img_top box-shadow img-rounded" %>
+      <% end %>
+      <div>
+        <%= @realty.description.html_safe %>
+      </div>
+      <div class="btn-group">
+        <%= link_to 'Edit', edit_country_realty_path(@realty.country, @realty), class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to 'Back', country_realties_path(@realty.country), class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to 'Destroy', [@realty.country, @realty], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-danger" %>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Realty photos</h4>
+        </div>
+        <div id="popup-gallery" class="panel-body">
 
-<p>
-  <b>Preview:</b>
-  <%= @realty.preview %>
-</p>
+          <% (0...@realty.images.count).each do |image| %>
+            <div class="col-lg-4 col-md-4 col-xs-6 col-sm-4">
+              <%= link_to @realty.gallery_image(@realty.images[image]), class: "original-image" do %>
+                <!--<img class="" data-toggle="lightbox" data-gallery="16" data-type="image" data-remote="img/sa1.jpg" src="img/sa1t.jpg">-->
+                <%= image_tag (@realty.gallery_thumbnail(@realty.images[image])), class: 'img-responsive img-thumbnail', data: {toggle: "lightbox", gallery: @realty.id, type: "image", remote: "img/sa1.jpg"} %>
+              <!--</a>-->
+              <% end %>
+            </div>
+          <% end %>
 
-<p>
-  <b>Description:</b>
-  <%= @realty.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_country_realty_path(@realty.country, @realty) %> |
-<%= link_to 'Back', country_realties_path(@realty.country) %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 pull-right">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Realties</h4>
+        </div>
+        <div class="panel-body">
+          <ul class="list-inline sidebar_realties_list">
+            <li class="col-xs-12">
+              <a href="realty.html" class="col-xs-12">
+                <h4>
+                  Двухэтажный дом в историческом, тихом и уютном городе Азербайджана Губа.
+                </h4>
+                <img class="img-responsive img-rounded" src="img/sb2.jpg" alt="some text">
+              </a>
+            </li>
+            <li class="col-xs-12">
+              <a href="realty.html" class="col-xs-12">
+                <h4>
+                  Уютный летний домик.
+                </h4>
+                <img class="img-responsive img-rounded" src="img/sa3t.jpg" alt="some text">
+              </a>
+            </li>
+            <li class="col-xs-12">
+              <a href="realty.html" class="col-xs-12">
+                <h4>
+                  Квартира с мансардой у парка офицеров
+                </h4>
+                <img class="img-responsive img-rounded" src="img/sb1.jpg" alt="some text">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="application/javascript">
+  $('#popup-gallery').magnificPopup({
+    delegate: 'a.original-image',
+    type: 'image',
+    tLoading: 'Loading image #%curr%...',
+    mainClass: 'mfp-img-mobile',
+    gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
+      titleSrc: function(item) {
+        return item.el.attr('title') + '<small>by Callista Consulting</small>';
+      }
+    }
+  });
+</script>

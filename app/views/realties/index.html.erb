@@ -1,27 +1,39 @@
-<h1>Listing realties</h1>
+<div id="breadcrambs">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to @country.name, country_realties_path(@country) %></li>
+    </ol>
+  </div>
+</div>
+<%= flash_messages %>
+<div class="container">
+  <h1>Listing realties</h1>
+  <% @realties.each do |realty| %>
+    <div class="row">
+    <div class="col-md-7">
+      <a href="realty.html">
+        <% if realty.preview_img.attached? %>
+          <%= image_tag realty.main_preview_img, class: "img-responsive" %>
+        <% end %>
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h3><%= realty.title %></h3>
+      <div>
+        <%= strip_tags(realty.preview) %>
+      </div>
+      <div class="btn-group">
+        <%= link_to 'Show', [realty.country, realty], class: "btn btn-sm btn-outline-danger" %>
+        <%= link_to 'Edit', edit_country_realty_path(realty.country, realty),  class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to 'Destroy', [realty.country, realty], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-danger" %>
+      </div>
+    </div>
+  </div>
+    <hr>
+  <% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Preview</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @realties.each do |realty| %>
-  <tr>
-    <td><%= realty.title %></td>
-    <td><%= realty.preview %></td>
-    <td><%= realty.description %></td>
-    <td><%= link_to 'Show', [realty.country, realty] %></td>
-    <td><%= link_to 'Edit', edit_country_realty_path(realty.country, realty) %></td>
-    <td><%= link_to 'Destroy', [realty.country, realty], :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Realty', new_country_realty_path(params[:country_id]) %>
+  <br />
+  <%= link_to 'New Realty', new_country_realty_path(params[:country_id]) %>
+</div>

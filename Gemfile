@@ -47,6 +47,7 @@ gem 'carrierwave', '~> 1.2.3'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'nested_scaffold', '~> 1.0.0'
+gem 'magnific-popup-rails', '~> 1.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

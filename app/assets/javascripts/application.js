@@ -15,4 +15,5 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require magnific-popup
 //= require_tree .

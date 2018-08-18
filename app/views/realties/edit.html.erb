@@ -1,6 +1,19 @@
-<h1>Editing realty</h1>
+<div id="breadcrambs">
+  <div class="container">
+    <ol class="breadcrumb">
+      <li><%= link_to 'Главная', root_path %></li>
+      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to @realty.country.name, country_realties_path(@realty.country) %></li>
+      <li><%= link_to @realty.title, edit_country_realty_path(@country, @realty) %></li>
+    </ol>
+  </div>
+</div>
 
-<%= render 'form' %>
+<div class="container">
+    <h1>Editing realty</h1>
 
-<%= link_to 'Show', [@realty.country, @realty] %> |
-<%= link_to 'Back', country_realties_path(@realty.country) %>
+    <%= render 'form' %>
+
+    <%= link_to 'Show', [@realty.country, @realty] %> |
+    <%= link_to 'Back', country_realties_path(@realty.country) %>
+</div>
