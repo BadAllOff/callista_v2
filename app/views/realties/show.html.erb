@@ -32,17 +32,17 @@
           <h4>Realty photos</h4>
         </div>
         <div id="popup-gallery" class="panel-body">
-
-          <% (0...@realty.images.count).each do |image| %>
-            <div class="col-lg-4 col-md-4 col-xs-6 col-sm-4">
-              <%= link_to @realty.gallery_image(@realty.images[image]), class: "original-image" do %>
-                <!--<img class="" data-toggle="lightbox" data-gallery="16" data-type="image" data-remote="img/sa1.jpg" src="img/sa1t.jpg">-->
-                <%= image_tag (@realty.gallery_thumbnail(@realty.images[image])), class: 'img-responsive img-thumbnail', data: {toggle: "lightbox", gallery: @realty.id, type: "image", remote: "img/sa1.jpg"} %>
-              <!--</a>-->
-              <% end %>
-            </div>
+          <% if @realty.images.attached?  %>
+            <% (0...@realty.images.count).each do |image| %>
+              <div class="col-lg-4 col-md-4 col-xs-6 col-sm-4">
+                <%= link_to @realty.gallery_image(@realty.images[image]), class: "original-image" do %>
+                  <!--<img class="" data-toggle="lightbox" data-gallery="16" data-type="image" data-remote="img/sa1.jpg" src="img/sa1t.jpg">-->
+                  <%= image_tag (@realty.gallery_thumbnail(@realty.images[image])), class: 'img-responsive img-thumbnail', data: {toggle: "lightbox", gallery: @realty.id, type: "image", remote: "img/sa1.jpg"} %>
+                <!--</a>-->
+                <% end %>
+              </div>
+            <% end %>
           <% end %>
-
         </div>
       </div>
     </div>
