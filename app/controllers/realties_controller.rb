@@ -1,6 +1,7 @@
 class RealtiesController < ApplicationController
-  before_action :set_realties
+  before_action :set_country
   before_action :set_realty, only: [:show, :edit, :update, :destroy]
+  before_action :set_realties, only: [:show]
 
   # GET countries/1/realties
   def index
@@ -49,7 +50,7 @@ class RealtiesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_realties
+    def set_country
       @country = Country.find(params[:country_id])
     end
 
@@ -57,6 +58,9 @@ class RealtiesController < ApplicationController
       @realty = @country.realties.find(params[:id])
     end
 
+    def set_realties
+      @realties = @country.realties.all.limit(10)
+    end
     # Only allow a trusted parameter "white list" through.
     def realty_params
       params.require(:realty).permit(:title, :preview, :description, :preview_img, images: [])

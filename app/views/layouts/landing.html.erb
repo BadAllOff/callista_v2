@@ -67,14 +67,16 @@
           <% @last_projects.each do |project| %>
             <div class="col-lg-4 col-md-4">
               <div>
-                <a href="#">
+                <%= link_to project do %>
                   <figure class="imghvr-shutter-in-out-diag-1">
-                    <img src="<%= asset_path(project[:img]) %>" alt="alt text">
+                    <% if project.preview_img.attached? %>
+                      <%= image_tag project.thumbnail, class: "img-responsive", style: 'border: 1px solid #c3c3c3;' %>
+                    <% end %>
                     <figcaption>
                       <%= project[:title] %>
                     </figcaption>
                   </figure>
-                </a>
+                <% end %>
               </div>
             </div>
           <% end %>
@@ -95,6 +97,32 @@
         <div class="col-lg-2"></div>
         <div class="col-lg-10 col-lg-offset-1">
           <%= image_tag 'munten.png', class: "img-responsive", alt: "We create your business" %>
+        </div>
+      </div>
+    </div>
+
+    <div id="lg">
+      <div class="container">
+        <div class="row centered">
+          <h4>Realty</h4>
+          <% @last_realties.each do |realty| %>
+            <div class="col-lg-4 col-md-4">
+              <div>
+                <%= link_to country_realty_path(realty.country, realty)  do %>
+                  <figure class="imghvr-shutter-in-out-diag-1">
+                    <% if realty.preview_img.attached? %>
+                      <%= image_tag realty.main_preview_img_header_variant, class: "img-responsive img-rounded", alt: realty.title %>
+                    <% else %>
+                      <img class="img-responsive img-rounded" src="<%= asset_path('268x150.png') %>" alt="some text">
+                    <% end %>
+                    <figcaption>
+                      <%= realty.title %>
+                    </figcaption>
+                  </figure>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

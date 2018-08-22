@@ -52,32 +52,22 @@
           <h4>Realties</h4>
         </div>
         <div class="panel-body">
-          <ul class="list-inline sidebar_realties_list">
-            <li class="col-xs-12">
-              <a href="realty.html" class="col-xs-12">
-                <h4>
-                  Двухэтажный дом в историческом, тихом и уютном городе Азербайджана Губа.
-                </h4>
-                <img class="img-responsive img-rounded" src="img/sb2.jpg" alt="some text">
-              </a>
-            </li>
-            <li class="col-xs-12">
-              <a href="realty.html" class="col-xs-12">
-                <h4>
-                  Уютный летний домик.
-                </h4>
-                <img class="img-responsive img-rounded" src="img/sa3t.jpg" alt="some text">
-              </a>
-            </li>
-            <li class="col-xs-12">
-              <a href="realty.html" class="col-xs-12">
-                <h4>
-                  Квартира с мансардой у парка офицеров
-                </h4>
-                <img class="img-responsive img-rounded" src="img/sb1.jpg" alt="some text">
-              </a>
-            </li>
-          </ul>
+          <% @realties.each do |realty| %>
+            <ul class="list-inline sidebar_realties_list">
+              <li class="col-xs-12">
+                <section class="col-xs-12">
+                  <h4>
+                    <%= link_to country_realty_path(realty.country, realty)  do %>
+                      <%= realty.title %>
+                    <% end %>
+                  </h4>
+                  <% if realty.preview_img.attached? %>
+                    <%= image_tag realty.main_preview_img_header_variant, class: "img-responsive img-rounded", alt: realty.title %>
+                  <% end %>
+                </section>
+              </li>
+            </ul>
+          <% end %>
         </div>
       </div>
     </div>

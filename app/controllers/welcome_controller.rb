@@ -3,24 +3,16 @@ class WelcomeController < ApplicationController
 
   def index
     @last_projects = last_projects
+    @last_realties = last_realties
   end
 
   private
 
   def last_projects
-    [
-        {
-            title: 'Практический семинар на тему " Особенности трудоустройста в Азербайджане и зарубежом."',
-            img: "268x150.png"
-        },
-        {
-            title: 'Müştəriyə yönləndirilmiş xidmətin göstərilməsi və çarpaz satışın əsasları',
-            img: "268x150.png"
-        },
-        {
-            title: 'Практический семинар на тему " Особенности трудоустройста в Азербайджане и зарубежом."',
-            img: "268x150.png"
-        }
-    ]
+    Project.all.limit(3)
+  end
+
+  def last_realties
+    Realty.all.limit(3)
   end
 end
