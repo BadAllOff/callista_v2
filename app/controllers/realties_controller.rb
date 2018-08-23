@@ -1,4 +1,5 @@
 class RealtiesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_country
   before_action :set_realty, only: [:show, :edit, :update, :destroy]
   before_action :set_realties, only: [:show]

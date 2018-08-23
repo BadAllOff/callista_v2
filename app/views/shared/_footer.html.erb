@@ -16,7 +16,15 @@
     <div class="row centered">
       <a href="#"><i class="fab fa-twitter-square"></i></a>
       <a href="#"><i class="fab fa-facebook-square"></i></a>
-      <a href="#"><i class="fas fa-door-open"></i></a>
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-door-open"></i>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <i class="fas fa-door-open"></i>
+        <% end %>
+      <% end %>
     </div>
   </div>
 </div>
