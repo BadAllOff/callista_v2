@@ -6,12 +6,13 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @project_decorators = Project.all.map{ |project| ProjectDecorator.new(project, view_context) }
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project_decorator = ProjectDecorator.new(@project, view_context)
   end
 
   # GET /projects/new

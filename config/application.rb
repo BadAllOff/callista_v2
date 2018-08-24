@@ -25,6 +25,8 @@ module CallistaV2
                        request_spec: false,
                        controller_spec: true
       g.fixtures_replacement :factory_bot, dir: 'spec/factories'
+
+      config.autoload_paths += %W( #{config.root}/app/decorators)
     end
 
   end

@@ -8,23 +8,21 @@
 </div>
 <%= flash_messages %>
 <div class="container projects_list">
-    <% @projects.each do |project| %>
+    <% @project_decorators.each do |project_decorator| %>
     <div class="row">
       <div class="col-md-7">
-        <% if project.preview_img.attached? %>
-          <%= image_tag project.thumbnail, class: "img-responsive", style: "padding-top:20px;" %>
-        <% end %>
+        <%= project_decorator.thumbnail_image %>
       </div>
       <div class="col-md-5">
-        <h3><%= project.title %></h3>
-        <p class="text-muted">Дата мероприятия: <%= project.start_datetime %></p>
+        <h3><%= project_decorator.title %></h3>
+        <p class="text-muted">Дата мероприятия: <%= project_decorator.start_datetime %></p>
         <section style="height: 170px; overflow: hidden;">
-          <%= project.preview.html_safe %>
+          <%= project_decorator.preview_text %>
         </section>
         <div class="btn-group">
-          <%= link_to 'Show', project, class: "btn btn-sm btn-outline-danger" %>
-          <%= link_to 'Edit', edit_project_path(project), class: "btn btn-sm btn-outline-secondary" %>
-          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
+          <%= project_decorator.link_to_show %>
+          <%= project_decorator.link_to_edit %>
+          <%= project_decorator.link_to_destroy %>
         </div>
       </div>
     </div>
