@@ -13,7 +13,7 @@
     <article class="col-md-8 project">
       <h1><%= @project_decorator.title %></h1>
       <hr>
-      <p class="text-muted">Дата мероприятия: <%= @project_decorator.start_datetime %></p>
+      <p class="text-muted"><%= @project_decorator.start_datetime %></p>
       <hr>
       <%= @project_decorator.main_image %>
       <%= @project_decorator.description_text %>
@@ -32,14 +32,14 @@
         </div>
         <div class="panel-body">
           <ul class="list-inline">
-            <% @recommended_projects.each do |project| %>
+            <% @recommended_projects_decorator.each do |recommended_project_decorator| %>
               <li>
-                <%= link_to project do %>
-                  <h4><%= project.title %></h4>
-                  <p class="text-muted">Дата мероприятия: <%= project.start_datetime %></p>
+                <%= link_to project_path(recommended_project_decorator.id) do %>
+                  <h4><%= recommended_project_decorator.title %></h4>
+                  <p class="text-muted"><%= recommended_project_decorator.start_datetime %></p>
 
                   <p class="list-group-item-text">
-                    <%= strip_tags(project.preview)%>
+                    <%= strip_tags(recommended_project_decorator.preview)%>
                   </p>
                 <% end %>
               </li>

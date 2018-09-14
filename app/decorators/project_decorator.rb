@@ -1,7 +1,11 @@
 class ProjectDecorator
   attr_reader :project, :view_context
 
-  delegate :title, :start_datetime, :preview_img, :preview, :main_image_header_variant, :description, to: :project
+  delegate :id, :title, :preview_img, :preview, :main_image_header_variant, :description, to: :project
+
+  def start_datetime
+    "Дата мероприятия: ".concat(project.start_datetime.strftime("%d.%m.%Y").to_s)
+  end
 
   def initialize (project, view_context)
     @project, @view_context = project, view_context
@@ -27,7 +31,7 @@ class ProjectDecorator
     description.html_safe
   end
 
-  def link_to_show
+  def link_to_show (&block)
     view_context.link_to 'Show', project, class: "btn btn-sm btn-outline-danger"
   end
 

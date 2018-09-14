@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project_decorator = ProjectDecorator.new(@project, view_context)
+    @recommended_projects_decorator = @recommended_projects.all.map{ |project| ProjectDecorator.new(project, view_context) }
   end
 
   # GET /projects/new
