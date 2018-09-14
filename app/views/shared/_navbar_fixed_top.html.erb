@@ -16,7 +16,11 @@
         <li><%= active_link_to 'SERVICES', services_path %></li>
         <li><%= active_link_to 'PROJECTS', projects_path %></li>
         <li><%= active_link_to 'REALTY', countries_path %></li>
-        <li><a href="contacts.html"><i class="fa fa-envelope"></i><span class="visible-xs-inline"> CONTACT</span></a></li>
+        <li>
+          <%= active_link_to contacts_path do %>
+            <i class="fa fa-envelope"></i><span class="visible-xs-inline"> CONTACT</span>
+          <% end %>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="fas fa-globe"></i><span class="visible-xs-inline"> LANGUAGE </span><span class="caret"></span></a>
           <ul class="dropdown-menu languages_btns">
