@@ -49,6 +49,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 gem 'nested_scaffold', '~> 1.0.0'
 gem 'magnific-popup-rails', '~> 1.1.0'
 gem 'devise', '~> 4.5.0'
+gem 'mail_form', '~> 1.7.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -61,6 +62,7 @@ group :development, :test do
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'pry', '~> 0.11.3'
 end
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
