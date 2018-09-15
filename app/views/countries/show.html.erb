@@ -8,26 +8,23 @@
 </div>
 <%= flash_messages %>
 <div class="container">
+  <h1><%= @country_decorator.name %></h1>
   <div class="project_list_item">
-    <%= image_tag @country.flag_thumbnail, class: "box-shadow" %>
+    <%= @country_decorator.flag_thumbnail%>
     <div class="card-body">
       <p class="card-text centered">
-        <%= @country.name %>
       </p>
       <p class="card-text centered">
-        <%= @country.description.html_safe %>
+        <%= @country_decorator.description.html_safe %>
       </p>
       <div class="centered">
         <div class="btn-group">
-          <%= link_to 'Show', @country, class: "btn btn-sm btn-outline-danger" %></td>
-          <%= link_to 'Edit', edit_country_path(@country), class: "btn btn-sm btn-outline-secondary" %>
-          <%= link_to 'Destroy', @country, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %>
-          <a href="realties.html" class="btn btn-sm btn-outline-danger"></a>
-
+          <%= link_to 'Back', countries_path, class: 'btn btn-sm btn-outline-secondary' %>
+          <%= @country_decorator.link_to_view_realties %>
+          <%= @country_decorator.link_to_edit %>
+          <%= @country_decorator.link_to_destroy %>
         </div>
       </div>
     </div>
   </div>
-  <%= link_to 'Edit', edit_country_path(@country) %> |
-  <%= link_to 'Back', countries_path %>
 </div>

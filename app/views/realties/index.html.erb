@@ -34,5 +34,5 @@
     <hr>
   <% end %>
 
-  <%= link_to 'New Realty', new_country_realty_path(params[:country_id]), class: "btn btn-sm btn-outline-danger" %>
+  <%= link_to 'New Realty', new_country_realty_path(params[:country_id]), class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
 </div>

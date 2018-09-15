@@ -23,7 +23,7 @@ class ServiceDecorator
     end
   end
 
-  def link_to_show (&block)
+  def link_to_show
     view_context.link_to 'View service', service, class: "btn btn-sm btn-outline-danger"
   end
 

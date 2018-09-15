@@ -31,7 +31,7 @@ class ProjectDecorator
     description.html_safe
   end
 
-  def link_to_show (&block)
+  def link_to_show
     view_context.link_to 'Show', project, class: "btn btn-sm btn-outline-danger"
   end
 

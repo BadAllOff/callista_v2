@@ -5,12 +5,13 @@ class CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
-    @countries = Country.all
+    @countries_decorators = Country.all.map{ |country| CountryDecorator.new(country, view_context) }
   end
 
   # GET /countries/1
   # GET /countries/1.json
   def show
+    @country_decorator = CountryDecorator.new(@country, view_context)
   end
 
   # GET /countries/new
