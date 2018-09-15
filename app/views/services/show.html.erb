@@ -32,12 +32,12 @@
         </div>
         <div class="panel-body">
           <ul class="list-unstyled">
-            <% @recommended_services_decorators.each do |service_decorator| %>
+            <% @recommended_services_decorators.each do |recommended_service_decorator| %>
               <li>
-                <%= link_to service_path(service_decorator.id) do %>
-                  <h4><%= service_decorator.title %></h4>
+                <%= link_to service_path(recommended_service_decorator.id) do %>
+                  <h4><%= recommended_service_decorator.title %></h4>
                   <p class="list-group-item-text">
-                    <%= service_decorator.preview %>
+                    <%= recommended_service_decorator.preview %>
                   </p>
                 <% end %>
               </li>
