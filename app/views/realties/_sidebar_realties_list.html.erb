@@ -1,0 +1,16 @@
+<% if !realties_decorators.blank? %>
+  <% realties_decorators.each do |realty_decorator| %>
+    <ul class="list-inline sidebar_realties_list">
+      <li class="col-xs-12">
+        <section class="col-xs-12">
+          <h4>
+            <%= link_to country_realty_path(realty_decorator.country, realty_decorator.id)  do %>
+              <%= realty_decorator.title %>
+            <% end %>
+          </h4>
+          <%= realty_decorator.sidebar_preview_image_thumbnail %>
+        </section>
+      </li>
+    </ul>
+  <% end %>
+<% end %>

@@ -6,11 +6,13 @@ class RealtiesController < ApplicationController
 
   # GET countries/1/realties
   def index
-    @realties = @country.realties
+    @realties_decorators = @country.realties.all.map { |realty| RealtyDecorator.new(realty, view_context) }
   end
 
   # GET countries/1/realties/1
   def show
+    @realty_decorator = RealtyDecorator.new(@realty, view_context)
+    @realties_decorators = @realties.map { |realty| RealtyDecorator.new(realty, view_context) }
   end
 
   # GET countries/1/realties/new

@@ -10,24 +10,21 @@
 <%= flash_messages %>
 <div class="container realties_list">
   <h1>Listing realties</h1>
-  <% @realties.each do |realty| %>
+  <% @realties_decorators.each do |realty_decorator| %>
     <div class="row">
     <div class="col-md-7">
-      <a href="realty.html">
-        <% if realty.preview_img.attached? %>
-          <%= image_tag realty.main_preview_img, class: "img-responsive" %>
-        <% end %>
-      </a>
+        <%= realty_decorator.main_preview_img %>
     </div>
     <div class="col-md-5">
-      <h3><%= realty.title %></h3>
+      <h3><%= realty_decorator.title %></h3>
       <div>
-        <%= strip_tags(realty.preview) %>
+        <%= strip_tags(realty_decorator.preview) %>
       </div>
+      <br>
       <div class="btn-group">
-        <%= link_to 'Show', [realty.country, realty], class: "btn btn-sm btn-outline-danger" %>
-        <%= link_to 'Edit', edit_country_realty_path(realty.country, realty),  class: "btn btn-sm btn-outline-secondary" %>
-        <%= link_to 'Destroy', [realty.country, realty], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-danger" %>
+        <%= realty_decorator.link_to_show %>
+        <%= realty_decorator.link_to_edit %>
+        <%= realty_decorator.link_to_destroy %>
       </div>
     </div>
   </div>

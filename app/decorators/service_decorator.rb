@@ -1,6 +1,5 @@
 class ServiceDecorator
   attr_reader :service, :view_context
-
   delegate :id, :title, :preview, :description, :preview_img, to: :service
 
   def initialize (service, view_context)

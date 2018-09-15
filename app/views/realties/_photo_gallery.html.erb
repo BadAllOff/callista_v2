@@ -1,0 +1,9 @@
+<% if realty_decorator.images.attached?  %>
+  <% (0...realty_decorator.images.count).each do |image| %>
+    <div class="col-lg-4 col-md-4 col-xs-6 col-sm-4">
+      <%= realty_decorator.link_to_gallery_image(image) %>
+    </div>
+  <% end %>
+<% else %>
+      No photos uploaded
+<% end %>
