@@ -3,12 +3,12 @@ class ProjectDecorator
 
   delegate :id, :title, :preview_img, :preview, :main_image_header_variant, :description, to: :project
 
-  def start_datetime
-    "Дата мероприятия: ".concat(project.start_datetime.strftime("%d.%m.%Y").to_s)
-  end
-
   def initialize (project, view_context)
     @project, @view_context = project, view_context
+  end
+
+  def start_datetime
+    "Дата мероприятия: ".concat(project.start_datetime.strftime("%d.%m.%Y").to_s)
   end
 
   def thumbnail_image

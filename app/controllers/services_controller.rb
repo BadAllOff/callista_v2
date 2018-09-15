@@ -6,12 +6,14 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.with_attached_preview_img.all
+    @service_decorators = Service.all.map { |service| ServiceDecorator.new(service, view_context) }
   end
 
   # GET /services/1
   # GET /services/1.json
   def show
+    @service_decorator = ServiceDecorator.new(@service, view_context)
+    @recommended_services_decorators = @recommended_services.map { |service| ServiceDecorator.new(service, view_context) }
   end
 
   # GET /services/new

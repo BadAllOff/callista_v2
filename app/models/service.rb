@@ -8,10 +8,6 @@ class Service < ApplicationRecord
     self.preview_img.variant(combine_options: {thumbnail: "360X360^", gravity: "center", extent: "360x225"}).processed
   end
 
-  def main_image_header_variant
-    self.preview_img.variant(resize: '750X484^').processed
-  end
-
   private
 
   def preview_img_type
