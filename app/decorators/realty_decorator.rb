@@ -37,6 +37,16 @@ class RealtyDecorator
   def sidebar_preview_image_thumbnail
     if realty.preview_img.attached?
       view_context.image_tag realty.preview_img.variant(resize: '295X195^').processed, class: "img-responsive img-rounded", alt: realty.title
+    else
+      view_context.image_tag view_context.asset_path('268x150.png'), alt: 'some text', class: 'img-responsive'
+    end
+  end
+
+  def landing_page_image_thumbnail
+    if realty.preview_img.attached?
+      view_context.image_tag realty.preview_img.variant(resize: '268x150!').processed, class: "img-responsive", style: 'border: 1px solid #c3c3c3;', alt: realty.title
+    else
+      view_context.image_tag view_context.asset_path('268x150.png'), alt: 'some text', class: 'img-responsive', style: 'border: 1px solid #c3c3c3;'
     end
   end
 
@@ -45,7 +55,7 @@ class RealtyDecorator
   end
 
   def link_to_edit
-    view_context.link_to 'Edit', edit_country_realty_path(realty.country, realty),  class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
+    view_context.link_to 'Edit', view_context.edit_country_realty_path(realty.country, realty),  class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
   end
 
   def link_to_destroy

@@ -6,7 +6,7 @@ class RealtiesController < ApplicationController
 
   # GET countries/1/realties
   def index
-    @realties_decorators = @country.realties.all.map { |realty| RealtyDecorator.new(realty, view_context) }
+    @realties_decorators = @country.realties.order('id desc').all.map { |realty| RealtyDecorator.new(realty, view_context) }
   end
 
   # GET countries/1/realties/1
@@ -62,7 +62,7 @@ class RealtiesController < ApplicationController
     end
 
     def set_realties
-      @realties = @country.realties.all.limit(10)
+      @realties = @country.realties.order('id desc').all.limit(10)
     end
     # Only allow a trusted parameter "white list" through.
     def realty_params

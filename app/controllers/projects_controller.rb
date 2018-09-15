@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @project_decorators = Project.all.map{ |project| ProjectDecorator.new(project, view_context) }
+    @project_decorators = Project.order('id desc').all.map{ |project| ProjectDecorator.new(project, view_context) }
   end
 
   # GET /projects/1
@@ -72,7 +72,7 @@ class ProjectsController < ApplicationController
     end
 
     def set_recommended_projects
-      @recommended_projects = Project.all.where.not(id: params[:id]).limit(10)
+      @recommended_projects = Project.order('id desc').all.where.not(id: params[:id]).limit(10)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

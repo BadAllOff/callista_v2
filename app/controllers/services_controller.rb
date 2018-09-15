@@ -6,7 +6,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @service_decorators = Service.all.map { |service| ServiceDecorator.new(service, view_context) }
+    @service_decorators = Service.order('id desc').all.map { |service| ServiceDecorator.new(service, view_context) }
   end
 
   # GET /services/1
@@ -72,7 +72,7 @@ class ServicesController < ApplicationController
     end
 
     def set_recommended_services
-      @recommended_services = Service.all.where.not(id: params[:id]).limit(10)
+      @recommended_services = Service.order('id desc').all.where.not(id: params[:id]).limit(10)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

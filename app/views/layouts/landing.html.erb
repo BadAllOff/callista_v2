@@ -54,16 +54,14 @@
         <div class="row centered">
           <h4>Последние работы</h4>
           <br>
-          <% @last_projects.each do |project| %>
+          <% @last_projects_decorators.each do |project_decorator| %>
             <div class="col-lg-4 col-md-4">
               <div>
-                <%= link_to project do %>
+                <%= link_to project_path(project_decorator.id) do %>
                   <figure class="imghvr-shutter-in-out-diag-1">
-                    <% if project.preview_img.attached? %>
-                      <%= image_tag project.thumbnail, class: "img-responsive", style: 'border: 1px solid #c3c3c3;' %>
-                    <% end %>
+                      <%= project_decorator.landing_page_thumbnail_image %>
                     <figcaption>
-                      <%= project[:title] %>
+                      <%= project_decorator.title %>
                     </figcaption>
                   </figure>
                 <% end %>
@@ -95,18 +93,14 @@
       <div class="container">
         <div class="row centered">
           <h4>Realty</h4>
-          <% @last_realties.each do |realty| %>
+          <% @last_realties_decorators.each do |realty_decorator| %>
             <div class="col-lg-4 col-md-4">
               <div>
-                <%= link_to country_realty_path(realty.country, realty)  do %>
+                <%= link_to country_realty_path(realty_decorator.country, realty_decorator.id)  do %>
                   <figure class="imghvr-shutter-in-out-diag-1">
-                    <% if realty.preview_img.attached? %>
-                      <%= image_tag realty.gallery_thumbnail(realty.preview_img), class: "img-responsive", alt: realty.title %>
-                    <% else %>
-                      <img class="img-responsive" src="<%= asset_path('268x150.png') %>" alt="some text">
-                    <% end %>
+                    <%= realty_decorator.landing_page_image_thumbnail %>
                     <figcaption>
-                      <%= realty.title %>
+                      <%= realty_decorator.title %>
                     </figcaption>
                   </figure>
                 <% end %>

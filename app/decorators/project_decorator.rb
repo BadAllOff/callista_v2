@@ -12,14 +12,20 @@ class ProjectDecorator
   end
 
   def thumbnail_image
-    if preview_img.attached?
-      view_context.image_tag project.thumbnail, class: "img-responsive", style: "padding-top:20px;"
+    if project.preview_img.attached?
+      view_context.image_tag project.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed, class: "img-responsive", style: "padding-top:20px;"
+    end
+  end
+
+  def landing_page_thumbnail_image
+    if project.preview_img.attached?
+      view_context.image_tag project.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed, class: "img-responsive", style: "border: 1px solid #c3c3c3;"
     end
   end
 
   def main_image
-    if @project.preview_img.attached?
-      view_context.image_tag main_image_header_variant, class: "img-responsive project_img_top box-shadow img-rounded", style: "width: 100%"
+    if project.preview_img.attached?
+      view_context.image_tag project.preview_img.variant(resize: '750X484^').processed, class: "img-responsive project_img_top box-shadow img-rounded", style: "width: 100%"
     end
   end
 
