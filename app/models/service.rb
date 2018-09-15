@@ -4,10 +4,6 @@ class Service < ApplicationRecord
   validates :title, :preview, :description, presence: true
   validate :preview_img_type
 
-  def thumbnail
-    self.preview_img.variant(combine_options: {thumbnail: "360X360^", gravity: "center", extent: "360x225"}).processed
-  end
-
   private
 
   def preview_img_type

@@ -19,7 +19,7 @@
       <%= @project_decorator.description_text %>
       <hr>
       <div class="btn-group">
-        <%= @project_decorator.link_to_show %>
+        <%= link_to 'Back', projects_path, class: "btn btn-sm btn-outline-secondary" %>
         <%= @project_decorator.link_to_edit %>
         <%= @project_decorator.link_to_destroy %>
       </div>
@@ -48,7 +48,5 @@
         </div>
       </div>
     </aside>
-
   </div>
-  <%= link_to 'Back', projects_path, class: "btn btn-sm btn-outline-secondary" %>
 </div>
