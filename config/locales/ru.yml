@@ -1,0 +1,15 @@
+ru:
+  top_nav:
+    about_us: 'О нас'
+    services: 'Услуги'
+    projects: 'Проекты'
+    realties: 'Недвижимость'
+    contacts: 'Контакты'
+    languages: 'Языки'
+  breadcrambs:
+    about_us: 'О нас'
+    services: 'Услуги'
+    projects: 'Проекты'
+    realties: 'Недвижимость'
+    contacts: 'Контакты'
+    languages: 'Языки'

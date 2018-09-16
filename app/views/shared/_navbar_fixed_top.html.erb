@@ -12,21 +12,33 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= active_link_to 'ABOUT US', root_path, active: :exclusive %></li>
-        <li><%= active_link_to 'SERVICES', services_path %></li>
-        <li><%= active_link_to 'PROJECTS', projects_path %></li>
-        <li><%= active_link_to 'REALTY', countries_path %></li>
+        <li><%= active_link_to t('top_nav.about_us'), root_path, active: :exclusive %></li>
+        <li><%= active_link_to t('top_nav.services'), services_path %></li>
+        <li><%= active_link_to t('top_nav.projects'), projects_path %></li>
+        <li><%= active_link_to t('top_nav.realties'), countries_path %></li>
         <li>
           <%= active_link_to contacts_path do %>
-            <i class="fa fa-envelope"></i><span class="visible-xs-inline"> CONTACT</span>
+            <i class="fa fa-envelope"></i><span class="visible-xs-inline"> <%= t('top_nav.contacts') %></span>
           <% end %>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="fas fa-globe"></i><span class="visible-xs-inline"> LANGUAGE </span><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="fas fa-globe"></i><span class="visible-xs-inline"> <%= t('top_nav.languages') %> </span><span class="caret"></span></a>
           <ul class="dropdown-menu languages_btns">
-            <li><a href=""><%= image_tag 'flags/gb.svg', alt: 'English' %> English</a></li>
-            <li><a href=""><%= image_tag 'flags/az.svg', alt: 'Azeri' %>  Azeri</a></li>
-            <li><a href=""><%= image_tag 'flags/ru.svg', alt: 'Русский' %> Русский</a></li>
+            <li>
+              <%= link_to locale: 'az' do  %>
+                <%= image_tag 'flags/az.svg', alt: 'Azeri', class: 'pull-left' %> &nbsp Azeri
+              <% end %>
+            </li>
+            <li>
+              <%= link_to locale: 'en' do  %>
+                <%= image_tag 'flags/gb.svg', alt: 'English', class: 'pull-left' %> &nbsp English
+              <% end %>
+            </li>
+            <li>
+              <%= link_to locale: 'ru' do  %>
+                <%= image_tag 'flags/ru.svg', alt: 'Русский', class: 'pull-left' %> &nbsp Русский
+              <% end %>
+            </li>
           </ul>
         </li>
       </ul>

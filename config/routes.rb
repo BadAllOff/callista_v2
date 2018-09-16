@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
+  scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
+    devise_for :users
+    mount Ckeditor::Engine => '/ckeditor'
 
-  devise_for :users
-  mount Ckeditor::Engine => '/ckeditor'
+    resources :services
+    resources :projects
+    resources :countries do
+      resources :realties
+    end
 
-  resources :services
-  resources :projects
-  resources :countries do
-    resources :realties
+    match '/contacts', to: 'contacts#new', via: 'get'
+    resources 'contacts', only: [:new, :create]
+    root 'welcome#index'
   end
-
-  match '/contacts', to: 'contacts#new', via: 'get'
-  resources 'contacts', only: [:new, :create]
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'welcome#index'
 end
