@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_151152) do
+ActiveRecord::Schema.define(version: 2018_09_18_185355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,10 +74,22 @@ ActiveRecord::Schema.define(version: 2018_09_18_151152) do
     t.index ["country_id"], name: "index_realties_on_country_id"
   end
 
+  create_table "service_translations", force: :cascade do |t|
+    t.integer "service_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title", default: "No translation."
+    t.string "preview", default: "No translation."
+    t.string "description", default: "No translation."
+    t.index ["locale"], name: "index_service_translations_on_locale"
+    t.index ["service_id"], name: "index_service_translations_on_service_id"
+  end
+
   create_table "services", force: :cascade do |t|
-    t.string "title", null: false
-    t.string "preview", null: false
-    t.text "description", null: false
+    t.string "title"
+    t.string "preview"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,5 @@
 class ChangeServiceTitleColumnToString < ActiveRecord::Migration[5.2]
+  class Service < ApplicationRecord; end
   def up
     change_column :services, :title, :string, default: 'Service title', null: false
     change_column :services, :preview, :string, default: 'Service preview', null: false
