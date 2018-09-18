@@ -3,5 +3,5 @@ class Realty < ApplicationRecord
   has_one_attached :preview_img
   has_many_attached :images
 
-  validates :title, :preview, :description, presence: true
+  validates :title, :preview, :description, :preview_img, presence: true
 end

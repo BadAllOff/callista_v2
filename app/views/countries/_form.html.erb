@@ -21,7 +21,7 @@
   <div class="form-group">
     <%= form.label :description, class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <%= form.cktext_area :description, ckeditor: { language: 'ru'} %>
+      <%= form.cktext_area :description, ckeditor: { language: I18n.locale} %>
     </div>
   </div>
 
