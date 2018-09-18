@@ -23,18 +23,18 @@ en:
     services:
       consulting_services:
         title: 'Consulting services'
-        desc: 'We offer our clients consulting services in different countries on the most advantageous conditions in the region.'
+        desc: 'We offer our clients consulting services in different countries on the most advantageous conditions in the region'
       realty:
         title: 'Real estate'
-        desc: 'Buy and sale real estate necessary to you at competitive prices and complete set of documents.'
+        desc: 'Buy and sale real estate necessary to you at competitive prices and complete set of documents'
       practical_seminars:
         title: 'Practical seminars'
-        desc: 'Professional program of trainings, attractive prices, individual approach.'
+        desc: 'Professional program of trainings, attractive prices, individual approach'
     last_projects: 'Recent Projects'
     we_create_your_business:
       title: 'We create your business'
       desc_html: "We work with you to address your most critical business priorities.<br/>
-Answer a few short questions and we can help you find the right solution for your business."
+Answer a few short questions and we can help you find the right solution for your business"
     realty: 'Realty'
   services:
     sidebar_header: 'Services'
