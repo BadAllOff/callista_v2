@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/BadAllOff/globalize
+  revision: ff22b92bfa283bb9f378899031dbfad38de6280d
+  specs:
+    globalize (5.1.0)
+      activemodel (>= 4.2, < 5.3)
+      activerecord (>= 4.2, < 5.3)
+      request_store (~> 1.0)
+
+GIT
   remote: https://github.com/galetahub/ckeditor.git
   revision: dc2cef2c2c3358124ebd86ca2ef2335cc898b41f
   specs:
@@ -127,8 +136,6 @@ GEM
       activesupport (>= 4.2.0)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
-    i18n-js (3.0.11)
-      i18n (>= 0.6.6, < 2)
     image_processing (1.6.0)
       mini_magick (~> 4.0)
       ruby-vips (>= 2.0.11, < 3)
@@ -213,6 +220,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    request_store (1.4.1)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -305,7 +314,7 @@ DEPENDENCIES
   devise (~> 4.5.0)
   factory_bot_rails (~> 4.10.0)
   font-awesome-sass (~> 5.2.0)
-  i18n-js (~> 3.0)
+  globalize (~> 5.1.0)!
   image_processing (~> 1.6.0)
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3.3)

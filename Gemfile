@@ -51,6 +51,7 @@ gem 'magnific-popup-rails', '~> 1.1.0'
 gem 'devise', '~> 4.5.0'
 gem 'mail_form', '~> 1.7.1'
 gem 'rails-i18n', '~> 5.1'
+gem 'globalize', '~> 5.1.0', git: 'https://github.com/BadAllOff/globalize'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
