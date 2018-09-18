@@ -132,3 +132,10 @@ Answer a few short questions and we can help you find the right solution for you
         name: 'Name and Surname'
         email: 'Email'
         message: 'Message'
+    errors:
+      models:
+        service:
+          attributes:
+            preview_img:
+              blank: "can't be blank"
+              needs_to_be_jpg_jpeg_png: 'needs to be JPEG, JPG or PNG'
