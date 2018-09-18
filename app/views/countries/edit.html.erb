@@ -1,17 +1,18 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.countries'), countries_path %></li>
+      <li><%= link_to t('countries.edit.edit_country'), edit_country_path(@country) %></li>
     </ol>
   </div>
 </div>
 <%= flash_messages %>
 <div class="container">
-  <h1>Editing Country</h1>
+  <h1><%= t('countries.edit.edit_country') %></h1>
 
   <%= render 'form', country: @country %>
 
-  <%= link_to 'Show', @country %> |
-  <%= link_to 'Back', countries_path %>
+  <%= link_to t('shared.show'), @country %> |
+  <%= link_to t('shared.back'), countries_path %>
 </div>

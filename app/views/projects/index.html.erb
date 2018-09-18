@@ -28,5 +28,5 @@
     </div>
     <hr>
   <% end %>
-  <%= link_to 'New Project', new_project_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
+  <%= link_to t('project.new.add_project'), new_project_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
 </div>

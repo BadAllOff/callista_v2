@@ -1,8 +1,8 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.countries'), countries_path %></li>
       <li><%= link_to @realty.country.name, country_realties_path(@realty.country) %></li>
       <li><%= link_to @realty.title, edit_country_realty_path(@country, @realty) %></li>
     </ol>
@@ -10,10 +10,10 @@
 </div>
 
 <div class="container">
-    <h1>Editing realty</h1>
+    <h1><%= t('realty.edit.edit_realty') %></h1>
 
     <%= render 'form' %>
 
-    <%= link_to 'Show', [@realty.country, @realty] %> |
-    <%= link_to 'Back', country_realties_path(@realty.country) %>
+    <%= link_to t('shared.show'), [@realty.country, @realty] %> |
+    <%= link_to t('shared.back'), country_realties_path(@realty.country) %>
 </div>

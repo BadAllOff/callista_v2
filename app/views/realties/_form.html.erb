@@ -14,14 +14,14 @@
   <div class="form-group">
     <%= form.label :preview_img, class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <%= form.file_field :preview_img %>
+      <%= form.file_field :preview_img, class: "filestyle", data: {input: "false", badge: 'true', buttonText: "#{t('shared.upload_file')}"} %>
     </div>
   </div>
 
   <div class="form-group">
     <%= form.label :images, class: "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <%= form.file_field :images, multiple: true %>
+      <%= form.file_field :images, multiple: true, class: "filestyle", data: {input: "false", badge: 'true', buttonText: "#{t('shared.upload_files')}"}%>
     </div>
   </div>
 
@@ -45,7 +45,7 @@
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10 action">
-      <%= form.submit 'Save Realty', class: 'btn btn-default'%>
+      <%= form.submit class: 'btn btn-default'%>
     </div>
   </div>
 <% end %>

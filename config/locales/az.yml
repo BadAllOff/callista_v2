@@ -5,3 +5,135 @@ az:
     projects: 'Layihələr'
     realty: 'Əmlak'
     contact: 'Əlaqə'
+  navigation:
+    top:
+      about_us: 'Ana sehifə'
+      services: 'Xidmətlər'
+      projects: 'Layihələr'
+      realties: 'Əmlak'
+      contacts: 'Əlaqə'
+      languages: 'Dil'
+    breadcrambs:
+      main: 'Ana sehifə'
+      services: 'Xidmətlər'
+      projects: 'Layihələr'
+      realties: 'Əmlak'
+      contacts: 'Əlaqə'
+      languages: 'Dil'
+      countries: 'Ölkələr'
+  footer:
+    start_your_business_with_us: 'Начните Ваш бизнес с нами!'
+    descriptive_text: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое. '
+  landing_page:
+    sub-title: 'Консалтинговые услуги в ОАЭ, Чехии, Сингапуре, Малайзии, Вьетнаме, Таиланде, Австралии и Азербайджане.'
+    services:
+      consulting_services:
+        title: 'Консалтинговые услуги'
+        desc: 'Oформление, кредитование, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов и многое другое.'
+      realty:
+        title: 'Недвижимость'
+        desc: 'Приобритение и продажа нужной Вам недвижимости по выгодным Вам ценам и полным пакетом документов.'
+      practical_seminars:
+        title: 'Практические семинары'
+        desc: 'Профессиональная программа тренингов, привлекательные цены, индивидуальный подход.'
+    last_projects: 'Последние проекты'
+    we_create_your_business:
+      title: 'Мы создаём Ваш бизнес.'
+      desc: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое.'
+    realty: 'Недвижимость'
+  services:
+    sidebar_header: 'Сервисы'
+    view_service: "Подробнее о сервисе"
+    new:
+      add_service: "Добавить сервис"
+    edit:
+      edit_service: 'Редактировать сервис'
+  countries:
+    about_country: 'Читать о %{country}'
+    view_realty_in_this_country: "Посмотреть недвижимость в %{country}"
+    new:
+      add_country: 'Добавить страну'
+    edit:
+      edit_country: 'Редактировать страну'
+  project:
+    sidebar_header: 'Проекты'
+    new:
+      add_project: 'Добавить проект'
+    edit:
+      edit_project: 'Редактировать проект'
+  realty:
+    list_of_realties: 'Список недвижимости'
+    sidebar_header: 'Недвижимость'
+    new:
+      add_realty: 'Добавить недвижимость'
+    edit:
+      edit_realty: 'Редактировать недвижимость'
+  contact:
+    address: 'Адрес: Азербайджан, г.Баку , ул. Мехди Мехдизаде 21, AZ 1025'
+    phone_whatsapp: 'Телефон\Whatsapp: +99455 2818001'
+    email_html: 'Email: callistabaku&#64;gmail.com'
+  shared:
+    edit: "Редактировать"
+    destroy: "Удалить"
+    back: "Назад"
+    show: "Просмотреть"
+    upload_file: 'Выбрать файл для загрузки'
+    upload_files: "Выбрать файлы для загрузки"
+  helpers:
+      submit:
+        create: "Создать"
+        update: "Обновить"
+        submit: "Сохранить"
+        country:
+          create: "Создать Страну"
+          update: "Обновить Страну"
+          submit: "Обновить Страну"
+        service:
+          create: "Создать Сервис"
+          update: "Обновить Сервис"
+          submit: "Обновить Сервис"
+        project:
+          create: "Создать Проект"
+          update: "Обновить Проект"
+          submit: "Обновить Проект"
+        realty:
+          create: "Создать Недвижимость"
+          update: "Обновить Недвижимость"
+          submit: "Обновить Недвижимость"
+        contact:
+          create: "Отправить сообщение"
+          update: "Редактировать сообщение"
+          submit: "Отправить сообшение"
+  activerecord:
+    models:
+      service: 'Сервис'
+      project: 'Проект'
+      country: 'Страна'
+      realty: 'Недвижимость'
+      contact: 'Контакты'
+    attributes:
+      service:
+        title: 'Заголовок'
+        preview: 'Короткое превью'
+        description: 'Описание'
+        preview_img: 'Картинка превью'
+      project:
+        title: 'Заголовок'
+        preview: 'Короткое превью'
+        description: 'Описание'
+        preview_img: 'Картинка превью'
+        start_datetime: 'Время начала'
+      country:
+        name: 'Название'
+        description: 'Описание'
+        flag_img: 'Флаг (желательно)'
+      realty:
+        title: 'Заголовок'
+        preview: 'Короткое превью'
+        description: 'Описание'
+        preview_img: 'Картинка превью'
+        images: 'Фотографии'
+      contact:
+        name: 'Имя и фамилия'
+        email: 'Email'
+        message: 'Сообщение'

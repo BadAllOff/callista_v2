@@ -23,14 +23,14 @@ class ServiceDecorator
   end
 
   def link_to_show
-    view_context.link_to 'View service', service, class: "btn btn-sm btn-outline-danger"
+    view_context.link_to view_context.t('services.view_service'), service, class: "btn btn-sm btn-outline-danger"
   end
 
   def link_to_edit
-    view_context.link_to 'Edit',view_context.edit_service_path(service), class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.edit'),view_context.edit_service_path(service), class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
   end
 
   def link_to_destroy
-    view_context.link_to 'Destroy', service, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.destroy'), service, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
   end
 end

@@ -16,18 +16,18 @@ class CountryDecorator
   end
 
   def link_to_view_realties
-    view_context.link_to 'View realty in this country', view_context.country_realties_path(country), class: "btn btn-sm btn-outline-danger"
+    view_context.link_to view_context.t('countries.view_realty_in_this_country', country: country.name), view_context.country_realties_path(country), class: "btn btn-sm btn-outline-danger"
   end
 
   def link_to_show
-    view_context.link_to 'About country', country, class: "btn btn-sm btn-outline-danger"
+    view_context.link_to view_context.t('countries.about_country', country: country.name), country, class: "btn btn-sm btn-outline-danger"
   end
 
   def link_to_edit
-    view_context.link_to 'Edit',view_context.edit_country_path(country), class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.edit'),view_context.edit_country_path(country), class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
   end
 
   def link_to_destroy
-    view_context.link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.destroy'), country, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
   end
 end

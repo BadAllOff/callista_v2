@@ -27,23 +27,18 @@
         <br><br>
         <div class="col-lg-4">
           <i class="far fa-handshake fa-2x"></i>
-          <h4>Консалтинговые услуги</h4>
-          <p>Oформление, кредитование, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов и многое другое.
-          </p>
+          <h4><%= t('landing_page.services.consulting_services.title') %></h4>
+          <p><%= t('landing_page.services.consulting_services.desc') %></p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-home fa-2x"></i>
-          <h4>Недвижимость</h4>
-          <p>
-            Приобритение и продажа нужной Вам недвижимости по выгодным Вам ценам и полным пакетом документов.
-          </p>
+          <h4><%= t('landing_page.services.realty.title') %></h4>
+          <p><%= t('landing_page.services.realty.desc') %></p>
         </div>
         <div class="col-lg-4">
           <i class="fa fa-laptop fa-2x"></i>
-          <h4>Практические семинары</h4>
-          <p>
-            Профессиональная программа тренингов, привлекательные цены, индивидуальный подход.
-          </p>
+          <h4><%= t('landing_page.services.practical_seminars.title') %></h4>
+          <p><%= t('landing_page.services.practical_seminars.desc') %></p>
         </div>
       </div>
       <br><br>
@@ -52,21 +47,23 @@
     <div id="dg">
       <div class="container">
         <div class="row centered">
-          <h4>Последние работы</h4>
+          <h4><%= t('landing_page.last_projects') %></h4>
           <br>
-          <% @last_projects_decorators.each do |project_decorator| %>
-            <div class="col-lg-4 col-md-4">
-              <div>
-                <%= link_to project_path(project_decorator.id) do %>
-                  <figure class="imghvr-shutter-in-out-diag-1">
-                      <%= project_decorator.landing_page_thumbnail_image %>
-                    <figcaption>
-                      <%= project_decorator.title %>
-                    </figcaption>
-                  </figure>
-                <% end %>
+          <% if !@last_projects_decorators.blank? %>
+            <% @last_projects_decorators.each do |project_decorator| %>
+              <div class="col-lg-4 col-md-4">
+                <div>
+                  <%= link_to project_path(project_decorator.id) do %>
+                    <figure class="imghvr-shutter-in-out-diag-1">
+                        <%= project_decorator.landing_page_thumbnail_image %>
+                      <figcaption>
+                        <%= project_decorator.title %>
+                      </figcaption>
+                    </figure>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -76,10 +73,8 @@
       <div class="row centered">
         <br><br>
         <div class="col-lg-8 col-lg-offset-2">
-          <h4>We create your business</h4>
-          <p>
-            Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое.
-          </p>
+          <h4><%= t('landing_page.we_create_your_business.title') %></h4>
+          <p><%= t('landing_page.we_create_your_business.desc_html') %></p>
           <p><br><br></p>
         </div>
         <div class="col-lg-2"></div>
@@ -92,20 +87,22 @@
     <div id="lg">
       <div class="container">
         <div class="row centered">
-          <h4>Realty</h4>
-          <% @last_realties_decorators.each do |realty_decorator| %>
-            <div class="col-lg-4 col-md-4">
-              <div>
-                <%= link_to country_realty_path(realty_decorator.country, realty_decorator.id)  do %>
-                  <figure class="imghvr-shutter-in-out-diag-1">
-                    <%= realty_decorator.landing_page_image_thumbnail %>
-                    <figcaption>
-                      <%= realty_decorator.title %>
-                    </figcaption>
-                  </figure>
-                <% end %>
+          <h4><%= t('landing_page.realty') %></h4>
+          <% if !@last_realties_decorators.blank? %>
+            <% @last_realties_decorators.each do |realty_decorator| %>
+              <div class="col-lg-4 col-md-4">
+                <div>
+                  <%= link_to country_realty_path(realty_decorator.country, realty_decorator.id)  do %>
+                    <figure class="imghvr-shutter-in-out-diag-1">
+                      <%= realty_decorator.landing_page_image_thumbnail %>
+                      <figcaption>
+                        <%= realty_decorator.title %>
+                      </figcaption>
+                    </figure>
+                  <% end %>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% end %>
         </div>
       </div>

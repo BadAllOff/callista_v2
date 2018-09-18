@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require magnific-popup
+//= require libs/bootstrap-filestyle
 //= require_tree .

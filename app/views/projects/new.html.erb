@@ -1,16 +1,17 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Проекты', projects_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.projects'), projects_path %></li>
+      <li><%= link_to t('project.new.add_project'), new_project_path %></li>
     </ol>
   </div>
 </div>
 <%= flash_messages %>
 <div class="container">
-  <h1>New Project</h1>
+  <h1><%= t('project.new.add_project') %></h1>
 
   <%= render 'form', project: @project %>
 
-  <%= link_to 'Back', projects_path %>
+  <%= link_to t('shared.back'), projects_path %>
 </div>

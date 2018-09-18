@@ -1,8 +1,8 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Услуги', services_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.services'), services_path %></li>
     </ol>
   </div>
 </div>
@@ -30,6 +30,6 @@
     <% end %>
   </div>
   <hr>
-  <%= link_to 'New Service', new_service_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
+  <%= link_to t('services.new.add_service'), new_service_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
 </div>
 

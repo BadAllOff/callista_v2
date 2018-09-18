@@ -1,15 +1,15 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.countries'), countries_path %></li>
       <li><%= link_to @country.name, country_realties_path(@country) %></li>
     </ol>
   </div>
 </div>
 <%= flash_messages %>
 <div class="container realties_list">
-  <h1>Listing realties</h1>
+  <h1><%= t('realty.list_of_realties') %></h1>
   <% @realties_decorators.each do |realty_decorator| %>
     <div class="row">
     <div class="col-md-7">
@@ -31,5 +31,5 @@
     <hr>
   <% end %>
 
-  <%= link_to 'New Realty', new_country_realty_path(params[:country_id]), class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
+  <%= link_to t('realty.new.add_realty'), new_country_realty_path(params[:country_id]), class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
 </div>

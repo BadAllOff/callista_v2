@@ -12,17 +12,17 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= active_link_to t('top_nav.about_us'), root_path, active: :exclusive %></li>
-        <li><%= active_link_to t('top_nav.services'), services_path %></li>
-        <li><%= active_link_to t('top_nav.projects'), projects_path %></li>
-        <li><%= active_link_to t('top_nav.realties'), countries_path %></li>
+        <li><%= active_link_to t('navigation.top.about_us'), root_path, active: :exclusive %></li>
+        <li><%= active_link_to t('navigation.top.services'), services_path %></li>
+        <li><%= active_link_to t('navigation.top.projects'), projects_path %></li>
+        <li><%= active_link_to t('navigation.top.realties'), countries_path %></li>
         <li>
           <%= active_link_to contacts_path do %>
-            <i class="fa fa-envelope"></i><span class="visible-xs-inline"> <%= t('top_nav.contacts') %></span>
+            <i class="fa fa-envelope"></i><span class="visible-xs-inline"> <%= t('navigation.top.contacts') %></span>
           <% end %>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="fas fa-globe"></i><span class="visible-xs-inline"> <%= t('top_nav.languages') %> </span><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" ><i class="fas fa-globe"></i><span class="visible-xs-inline"> <%= t('navigation.top.languages') %> </span><span class="caret"></span></a>
           <ul class="dropdown-menu languages_btns">
             <li>
               <%= link_to locale: 'az' do  %>

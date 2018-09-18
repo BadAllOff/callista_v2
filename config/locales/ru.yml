@@ -1,15 +1,191 @@
+#  lala:
+#    names:
+#      zero: "Нет имени"
+#      one: "%{count} Имя"
+#      few: "%{count} имени"
+#      many: "%{count} имён"
 ru:
-  top_nav:
-    about_us: 'О нас'
-    services: 'Услуги'
-    projects: 'Проекты'
-    realties: 'Недвижимость'
-    contacts: 'Контакты'
-    languages: 'Языки'
-  breadcrambs:
-    about_us: 'О нас'
-    services: 'Услуги'
-    projects: 'Проекты'
-    realties: 'Недвижимость'
-    contacts: 'Контакты'
-    languages: 'Языки'
+  navigation:
+    top:
+      about_us: 'О нас'
+      services: 'Услуги'
+      projects: 'Проекты'
+      realties: 'Недвижимость'
+      contacts: 'Контакты'
+      languages: 'Языки'
+    breadcrambs:
+      main: 'Главная'
+      services: 'Услуги'
+      projects: 'Проекты'
+      realties: 'Недвижимость'
+      contacts: 'Контакты'
+      languages: 'Языки'
+      countries: 'Страны'
+  footer:
+    start_your_business_with_us: 'Начните Ваш бизнес с нами!'
+    descriptive_text: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое. '
+  landing_page:
+    sub-title: 'Консалтинговые услуги в ОАЭ, Чехии, Сингапуре, Малайзии, Вьетнаме, Таиланде, Австралии и Азербайджане.'
+    services:
+      consulting_services:
+        title: 'Консалтинговые услуги'
+        desc: 'Oформление, кредитование, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов и многое другое.'
+      realty:
+        title: 'Недвижимость'
+        desc: 'Приобритение и продажа нужной Вам недвижимости по выгодным Вам ценам и полным пакетом документов.'
+      practical_seminars:
+        title: 'Практические семинары'
+        desc: 'Профессиональная программа тренингов, привлекательные цены, индивидуальный подход.'
+    last_projects: 'Последние проекты'
+    we_create_your_business:
+      title: 'Мы создаём Ваш бизнес.'
+      desc: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое.'
+    realty: 'Недвижимость'
+  services:
+    sidebar_header: 'Сервисы'
+    view_service: "Подробнее о сервисе"
+    new:
+      add_service: "Добавить сервис"
+    edit:
+      edit_service: 'Редактировать сервис'
+  countries:
+    about_country: 'Читать о %{country}'
+    view_realty_in_this_country: "Посмотреть недвижимость в %{country}"
+    new:
+      add_country: 'Добавить страну'
+    edit:
+      edit_country: 'Редактировать страну'
+  project:
+    sidebar_header: 'Проекты'
+    new:
+      add_project: 'Добавить проект'
+    edit:
+      edit_project: 'Редактировать проект'
+  realty:
+    list_of_realties: 'Список недвижимости'
+    sidebar_header: 'Недвижимость'
+    new:
+      add_realty: 'Добавить недвижимость'
+    edit:
+      edit_realty: 'Редактировать недвижимость'
+  contact:
+    address: 'Адрес: Азербайджан, г.Баку , ул. Мехди Мехдизаде 21, AZ 1025'
+    phone_whatsapp: 'Телефон\Whatsapp: +99455 2818001'
+    email_html: 'Email: callistabaku&#64;gmail.com'
+  shared:
+    edit: "Редактировать"
+    destroy: "Удалить"
+    back: "Назад"
+    show: "Просмотреть"
+    upload_file: 'Выбрать файл для загрузки'
+    upload_files: "Выбрать файлы для загрузки"
+  helpers:
+      submit:
+        create: "Создать"
+        update: "Обновить"
+        submit: "Сохранить"
+        country:
+          create: "Создать Страну"
+          update: "Обновить Страну"
+          submit: "Обновить Страну"
+        service:
+          create: "Создать Сервис"
+          update: "Обновить Сервис"
+          submit: "Обновить Сервис"
+        project:
+          create: "Создать Проект"
+          update: "Обновить Проект"
+          submit: "Обновить Проект"
+        realty:
+          create: "Создать Недвижимость"
+          update: "Обновить Недвижимость"
+          submit: "Обновить Недвижимость"
+        contact:
+          create: "Отправить сообщение"
+          update: "Редактировать сообщение"
+          submit: "Отправить сообшение"
+  activerecord:
+    models:
+      service: 'Сервис'
+      project: 'Проект'
+      country: 'Страна'
+      realty: 'Недвижимость'
+      contact: 'Контакты'
+    attributes:
+      service:
+        title: 'Заголовок'
+        preview: 'Короткое превью'
+        description: 'Описание'
+        preview_img: 'Картинка превью'
+      project:
+        title: 'Заголовок'
+        preview: 'Короткое превью'
+        description: 'Описание'
+        preview_img: 'Картинка превью'
+        start_datetime: 'Время начала'
+      country:
+        name: 'Название'
+        description: 'Описание'
+        flag_img: 'Флаг (желательно)'
+      realty:
+        title: 'Заголовок'
+        preview: 'Короткое превью'
+        description: 'Описание'
+        preview_img: 'Картинка превью'
+        images: 'Фотографии'
+      contact:
+        name: 'Имя и фамилия'
+        email: 'Email'
+        message: 'Сообщение'
+    errors:
+      models:
+        service:
+          attributes:
+            preview_img:
+              blank: "объязательна"
+              needs_to_be_jpg_jpeg_png: 'должна быть в формате JPEG, JPG или PNG'
+      format: "%{attribute} %{message}"
+      messages:
+        accepted: нужно подтвердить
+        blank: не может быть пустым
+        present: нужно оставить пустым
+        confirmation: не совпадает со значением поля %{attribute}
+        empty: не может быть пустым
+        equal_to: может иметь лишь значение, равное %{count}
+        even: может иметь лишь нечетное значение
+        exclusion: имеет зарезервированное значение
+        greater_than: может иметь значение большее %{count}
+        greater_than_or_equal_to: может иметь значение большее или равное %{count}
+        inclusion: имеет непредусмотренное значение
+        invalid: имеет неверное значение
+        less_than: может иметь значение меньшее чем %{count}
+        less_than_or_equal_to: может иметь значение меньшее или равное %{count}
+        model_invalid: 'Возникли ошибки: %{errors}'
+        not_a_number: не является числом
+        not_an_integer: не является целым числом
+        odd: может иметь лишь четное значение
+        required: не может отсутствовать
+        taken: уже существует
+        too_long:
+          few: слишком большой длины (не может быть больше чем %{count} символа)
+          many: слишком большой длины (не может быть больше чем %{count} символов)
+          one: слишком большой длины (не может быть больше чем %{count} символ)
+          other: слишком большой длины (не может быть больше чем %{count} символа)
+        too_short:
+          few: недостаточной длины (не может быть меньше %{count} символов)
+          many: недостаточной длины (не может быть меньше %{count} символов)
+          one: недостаточной длины (не может быть меньше %{count} символа)
+          other: недостаточной длины (не может быть меньше %{count} символа)
+        wrong_length:
+          few: неверной длины (может быть длиной ровно %{count} символа)
+          many: неверной длины (может быть длиной ровно %{count} символов)
+          one: неверной длины (может быть длиной ровно %{count} символ)
+          other: неверной длины (может быть длиной ровно %{count} символа)
+        other_than: должно отличаться от %{count}
+      template:
+        body: 'Проблемы возникли со следующими полями:'
+        header:
+          few: "%{model}: сохранение не удалось из-за %{count} ошибок"
+          many: "%{model}: сохранение не удалось из-за %{count} ошибок"
+          one: "%{model}: сохранение не удалось из-за %{count} ошибки"
+          other: "%{model}: сохранение не удалось из-за %{count} ошибки"

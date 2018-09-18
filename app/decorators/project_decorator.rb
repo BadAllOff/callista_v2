@@ -38,14 +38,14 @@ class ProjectDecorator
   end
 
   def link_to_show
-    view_context.link_to 'Show', project, class: "btn btn-sm btn-outline-danger"
+    view_context.link_to view_context.t('shared.show'), project, class: "btn btn-sm btn-outline-danger"
   end
 
   def link_to_edit
-    view_context.link_to 'Edit',view_context.edit_project_path(project), class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.edit'),view_context.edit_project_path(project), class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
   end
 
   def link_to_destroy
-    view_context.link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.destroy'), project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
   end
 end

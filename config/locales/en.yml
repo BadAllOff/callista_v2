@@ -1,10 +1,134 @@
 en:
-  top_nav:
-    about_us: 'About Us'
-    services: 'Services'
-    projects: 'Projects'
-    realties: 'Realties'
-    contacts: 'Contacts'
-    languages: 'Languages'
-  breadcrambs:
-
+  navigation:
+    top:
+      about_us: 'About Us'
+      services: 'Services'
+      projects: 'Projects'
+      realties: 'Realties'
+      contacts: 'Contacts'
+      languages: 'Languages'
+    breadcrambs:
+      main: 'About Us'
+      services: 'Services'
+      projects: 'Projects'
+      realties: 'Realties'
+      contacts: 'Contacts'
+      languages: 'Languages'
+      countries: 'Countries'
+  footer:
+    start_your_business_with_us: 'Start your business with us'
+    descriptive_text: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое. '
+  landing_page:
+    sub-title: 'Consulting services in the Czech Republic, the UAE, Singapore, Malaysia, Thailand, Vietnam, Australia and Azerbaijan'
+    services:
+      consulting_services:
+        title: 'Consulting services'
+        desc: 'We offer our clients consulting services in different countries on the most advantageous conditions in the region.'
+      realty:
+        title: 'Real estate'
+        desc: 'Buy and sale real estate necessary to you at competitive prices and complete set of documents.'
+      practical_seminars:
+        title: 'Practical seminars'
+        desc: 'Professional program of trainings, attractive prices, individual approach.'
+    last_projects: 'Recent Projects'
+    we_create_your_business:
+      title: 'We create your business'
+      desc_html: "We work with you to address your most critical business priorities.<br/>
+Answer a few short questions and we can help you find the right solution for your business."
+    realty: 'Realty'
+  services:
+    sidebar_header: 'Services'
+    view_service: "Read about service"
+    new:
+      add_service: "Add service"
+    edit:
+      edit_service: 'Edit service'
+  countries:
+    about_country: 'Read about %{country}'
+    view_realty_in_this_country: "View realty in %{country}"
+    new:
+      add_country: 'Add country'
+    edit:
+      edit_country: 'Edit country'
+  project:
+    sidebar_header: 'Projects'
+    new:
+      add_project: 'Add project'
+    edit:
+      edit_project: 'Edit project'
+  realty:
+    list_of_realties: 'List of realties'
+    sidebar_header: 'Realty'
+    new:
+      add_realty: 'Add realty'
+    edit:
+      edit_realty: 'Edit realty'
+  contact:
+    address: 'Address: Azerbaijan, city: Baku, str: Mehdi Mehdizade, index: AZ 1025'
+    phone_whatsapp: 'Phone\Whatsapp: +99455 2818001'
+    email_html: 'Email: callistabaku&#64;gmail.com'
+  shared:
+    edit: "Edit"
+    destroy: "Delete"
+    back: "Back"
+    show: "Show"
+    upload_file: 'Upload one file'
+    upload_files: "Upload multiple files"
+  helpers:
+      submit:
+        create: "Create"
+        update: "Update"
+        submit: "Submit"
+        country:
+          create: "Create country"
+          update: "Update country"
+          submit: "Submit country"
+        service:
+          create: "Create service"
+          update: "Update service"
+          submit: "Submit service"
+        project:
+          create: "Create project"
+          update: "Update project"
+          submit: "Submit project"
+        realty:
+          create: "Create realty"
+          update: "Update realty"
+          submit: "Submit realty"
+        contact:
+          create: "Send message"
+          update: "Edit message"
+          submit: "Submit message"
+  activerecord:
+    models:
+      service: 'Service'
+      project: 'Project'
+      country: 'Country'
+      realty: 'Realty'
+      contact: 'Contact'
+    attributes:
+      service:
+        title: 'Title'
+        preview: 'Short preview'
+        description: 'Rich description'
+        preview_img: 'Preview image'
+      project:
+        title: 'Title'
+        preview: 'Short preview'
+        description: 'Rich description'
+        preview_img: 'Preview image'
+        start_datetime: 'Start date and time'
+      country:
+        name: 'Country name'
+        description: 'Rich description'
+        flag_img: 'Flag (desirable)'
+      realty:
+        title: 'Title'
+        preview: 'Short preview'
+        description: 'Rich description'
+        preview_img: 'Preview image'
+        images: 'Realty photos'
+      contact:
+        name: 'Name and Surname'
+        email: 'Email'
+        message: 'Message'

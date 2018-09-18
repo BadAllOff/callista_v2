@@ -51,14 +51,14 @@ class RealtyDecorator
   end
 
   def link_to_show
-    view_context.link_to 'Show', [realty.country, realty], class: "btn btn-sm btn-outline-danger"
+    view_context.link_to view_context.t('shared.show'), [realty.country, realty], class: "btn btn-sm btn-outline-danger"
   end
 
   def link_to_edit
-    view_context.link_to 'Edit', view_context.edit_country_realty_path(realty.country, realty),  class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.edit'), view_context.edit_country_realty_path(realty.country, realty),  class: "btn btn-sm btn-outline-secondary" if view_context.user_signed_in?
   end
 
   def link_to_destroy
-    view_context.link_to 'Destroy', [realty.country, realty], :confirm => 'Are you sure?', :method => :delete, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
+    view_context.link_to view_context.t('shared.destroy'), [realty.country, realty],  data: { confirm: 'Are you sure?' }, :method => :delete, class: "btn btn-sm btn-danger" if view_context.user_signed_in?
   end
 end

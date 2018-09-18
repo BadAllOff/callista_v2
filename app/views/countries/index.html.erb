@@ -1,8 +1,8 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.countries'), countries_path %></li>
     </ol>
   </div>
 </div>
@@ -20,7 +20,7 @@
                 <%= country_decorator.name %>
               </p>
               <div class="centered">
-                <div class="btn-group">
+                <div class="btn-group centered">
                   <%= country_decorator.link_to_view_realties %>
                   <%= country_decorator.link_to_show %>
                   <%= country_decorator.link_to_edit %>
@@ -34,5 +34,5 @@
     <% end %>
   </div>
   <hr>
-  <%= link_to 'New Country', new_country_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
+  <%= link_to t('countries.new.add_country'), new_country_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
 </div>
