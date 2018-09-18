@@ -16,61 +16,62 @@ az:
       languages: 'Dil'
       countries: 'Ölkələr'
   footer:
-    start_your_business_with_us: 'Начните Ваш бизнес с нами!'
-    descriptive_text: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое. '
+    start_your_business_with_us: 'Biznesə bizimlə başlayın!'
+    descriptive_text: 'Biznesin qeydiyyatı, alınması və satışı, lazımi sertifikatları və icazələrin alınması, bank hesabları açılması, biznes kreditləri və s.'
   landing_page:
     sub-title: 'Çexiya, Birləşmiş Ərəb Əmirlikləri, Sinqapur, Malayziya, Tayland, Vyetnam, Avstraliya və Azərbaycanda konsaltinq xidmətləri'
     services:
       consulting_services:
-        title: 'Консалтинговые услуги'
-        desc: 'Oформление, кредитование, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов и многое другое'
+        title: 'Konsaltinq xidmətləri'
+        desc: 'Hörmətli  müştərilərimizə biz müxtəlif ölkələrdə, regionda ən sərfəli şərtlərlə, konsalting xidmətlərini təklif edirik'
       realty:
-        title: 'Недвижимость'
-        desc: 'Приобритение и продажа нужной Вам недвижимости по выгодным Вам ценам и полным пакетом документов'
+        title: 'Daşınmaz əmlak'
+        desc: 'Sizə əlverişli qiymətə ehtiyac duyulan əmlakın alınması, satılması və sənədlərin tam paketi'
       practical_seminars:
-        title: 'Практические семинары'
-        desc: 'Профессиональная программа тренингов, привлекательные цены, индивидуальный подход'
-    last_projects: 'Последние проекты'
+        title: 'Təlim proqramları'
+        desc: 'Professional təlim proqramı, cəlbedici qiymətlər, fərdi yanaşma'
+    last_projects: 'Son Layihələr'
     we_create_your_business:
-      title: 'Мы создаём Ваш бизнес.'
-      desc: 'Oформление бизнеса, покупка и продажа бизнеса, получение требуемых сертификатов и разрешений, открытие банковских счетов, кредитование бизнеса и т.д, подбор и многое другое.'
-    realty: 'Недвижимость'
+      title: 'Biz sizin şəxsi biznesi yaradırıq'
+      desc_html: 'Biznesin qeydiyyatı, alınması və satışı, lazımi sertifikatları və icazələrin alınması, bank hesabları açılması, biznes kreditləri və s.'
+    realty: 'Daşınmaz əmlak'
   services:
-    sidebar_header: 'Сервисы'
-    view_service: "Подробнее о сервисе"
+    sidebar_header: 'Xidmətlər'
+    view_service: "Xidmət haqqında məlumat"
     new:
       add_service: "Добавить сервис"
     edit:
       edit_service: 'Редактировать сервис'
   countries:
-    about_country: 'Читать о %{country}'
-    view_realty_in_this_country: "Посмотреть недвижимость в %{country}"
+    about_country: '%{country} haqqında oxumaq'
+    view_realty_in_this_country: "%{country} daşınmaz əmlaka baxmaq"
     new:
       add_country: 'Добавить страну'
     edit:
       edit_country: 'Редактировать страну'
   project:
-    sidebar_header: 'Проекты'
+    sidebar_header: 'Layihələr'
     new:
       add_project: 'Добавить проект'
     edit:
       edit_project: 'Редактировать проект'
   realty:
-    list_of_realties: 'Список недвижимости'
-    sidebar_header: 'Недвижимость'
+    list_of_realties: 'Əmlak Siyahısı'
+    sidebar_header: 'Əmlak'
+    realty_photos: 'Daşınmaz əmlakın fotoşəkilləri'
     new:
       add_realty: 'Добавить недвижимость'
     edit:
       edit_realty: 'Редактировать недвижимость'
   contact:
-    address: 'Адрес: Азербайджан, г.Баку , ул. Мехди Мехдизаде 21, AZ 1025'
-    phone_whatsapp: 'Телефон\Whatsapp: +99455 2818001'
+    address: 'Ünvan: Azərbaycan, Bakı, Mehdi Mehdizadə 21 küc., AZ 1025'
+    phone_whatsapp: 'Telefon\Whatsapp: +99455 2818001'
     email_html: 'Email: callistabaku&#64;gmail.com'
   shared:
     edit: "Редактировать"
     destroy: "Удалить"
-    back: "Назад"
-    show: "Просмотреть"
+    back: "Geri qayıdmaq"
+    show: "Daha ətraflı"
     upload_file: 'Выбрать файл для загрузки'
     upload_files: "Выбрать файлы для загрузки"
   helpers:
@@ -95,16 +96,16 @@ az:
           update: "Обновить Недвижимость"
           submit: "Обновить Недвижимость"
         contact:
-          create: "Отправить сообщение"
+          create: "Mesajı göndər"
           update: "Редактировать сообщение"
           submit: "Отправить сообшение"
   activerecord:
     models:
-      service: 'Сервис'
-      project: 'Проект'
-      country: 'Страна'
-      realty: 'Недвижимость'
-      contact: 'Контакты'
+      service: 'Xidmət'
+      project: 'Layihə'
+      country: 'Ölkə'
+      realty: 'Əmlak'
+      contact: 'Əlaqə'
     attributes:
       service:
         title: 'Заголовок'
@@ -128,6 +129,6 @@ az:
         preview_img: 'Картинка превью'
         images: 'Фотографии'
       contact:
-        name: 'Имя и фамилия'
+        name: 'Adınız və Soyadınız'
         email: 'Email'
-        message: 'Сообщение'
+        message: 'Mesajınız'

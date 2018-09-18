@@ -59,6 +59,7 @@ Answer a few short questions and we can help you find the right solution for you
   realty:
     list_of_realties: 'List of realties'
     sidebar_header: 'Realty'
+    realty_photos: 'Realty photos'
     new:
       add_realty: 'Add realty'
     edit:

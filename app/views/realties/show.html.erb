@@ -1,8 +1,8 @@
 <div id="breadcrambs">
   <div class="container">
     <ol class="breadcrumb">
-      <li><%= link_to 'Главная', root_path %></li>
-      <li><%= link_to 'Страны', countries_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.main'), root_path %></li>
+      <li><%= link_to t('navigation.breadcrambs.countries'), countries_path %></li>
       <li><%= link_to @country.name, country_realties_path(@country) %></li>
       <li><%= link_to @realty_decorator.title, country_realty_path(@country, @realty_decorator.id) %></li>
     </ol>
@@ -17,7 +17,7 @@
         <%= @realty_decorator.main_preview_img_header_variant %>
       <div><%= @realty_decorator.description.html_safe %></div>
       <div class="btn-group">
-        <%= link_to 'Back', country_realties_path(@country), class: "btn btn-sm btn-outline-secondary" %>
+        <%= link_to t('shared.back'), country_realties_path(@country), class: "btn btn-sm btn-outline-secondary" %>
         <%= @realty_decorator.link_to_edit %>
         <%= @realty_decorator.link_to_destroy %>
       </div>
@@ -25,7 +25,7 @@
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4>Realty photos</h4>
+          <h4><%= t('realty.realty_photos') %></h4>
         </div>
         <div id="popup-gallery" class="panel-body">
           <%= render partial: 'realties/photo_gallery', locals: {realty_decorator: @realty_decorator} %>
@@ -35,7 +35,7 @@
     <div class="col-md-4 pull-right">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h4>Realties</h4>
+          <h4><%= t('realty.sidebar_header') %></h4>
         </div>
         <div class="panel-body">
           <%= render partial: 'realties/sidebar_realties_list', locals: {realties_decorators: @realties_decorators, country: @country} %>
