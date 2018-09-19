@@ -8,24 +8,24 @@ class ProjectDecorator
   end
 
   def start_datetime
-    "Дата мероприятия: ".concat(project.start_datetime.strftime("%d.%m.%Y").to_s)
+    I18n.localize project.start_datetime, format: :long
   end
 
   def thumbnail_image
     if project.preview_img.attached?
-      view_context.image_tag project.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed, class: "img-responsive", style: "padding-top:20px;"
+      view_context.image_tag project.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed, class: "img-responsive box-shadow", style: "margin-top:20px;", title: project.title, alt: project.title
     end
   end
 
   def landing_page_thumbnail_image
     if project.preview_img.attached?
-      view_context.image_tag project.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed, class: "img-responsive", style: "border: 1px solid #c3c3c3;"
+      view_context.image_tag project.preview_img.variant(combine_options: {thumbnail: "652x280^", gravity: "center", extent: "652x280"}).processed, class: "img-responsive", style: "border: 1px solid #c3c3c3;", title: project.title, alt: project.title
     end
   end
 
   def main_image
     if project.preview_img.attached?
-      view_context.image_tag project.preview_img.variant(resize: '750X484^').processed, class: "img-responsive project_img_top box-shadow img-rounded", style: "width: 100%"
+      view_context.image_tag project.preview_img.variant(resize: '750X484^').processed, class: "img-responsive project_img_top box-shadow img-rounded", style: "width: 100%", title: project.title, alt: project.title
     end
   end
 

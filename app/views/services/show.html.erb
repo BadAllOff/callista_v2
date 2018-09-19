@@ -22,10 +22,11 @@
         <%= link_to t('shared.back'), services_path, class: "btn btn-sm btn-outline-secondary" %>
         <%= @service_decorator.link_to_edit %>
         <%= @service_decorator.link_to_destroy %>
+        <%= link_to t('services.new.add_service'), new_service_path, class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
       </div>
     </div>
 
-    <aside class="col-md-4">
+    <aside class="col-md-4 service_sidebar">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4><%= t('services.sidebar_header') %></h4>
@@ -36,9 +37,11 @@
               <li>
                 <%= link_to service_path(recommended_service_decorator.id) do %>
                   <h4><%= recommended_service_decorator.title %></h4>
+                  <%= recommended_service_decorator.service_preview_img_thumbnail %>
                   <p class="list-group-item-text">
                     <%= recommended_service_decorator.preview %>
                   </p>
+                  <hr>
                 <% end %>
               </li>
             <% end %>

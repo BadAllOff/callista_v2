@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_185355) do
+ActiveRecord::Schema.define(version: 2018_09_18_234827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,11 +55,23 @@ ActiveRecord::Schema.define(version: 2018_09_18_185355) do
     t.text "description", null: false
   end
 
+  create_table "project_translations", force: :cascade do |t|
+    t.integer "project_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "title", default: "No translation."
+    t.text "preview", default: "No translation."
+    t.text "description", default: "No translation."
+    t.index ["locale"], name: "index_project_translations_on_locale"
+    t.index ["project_id"], name: "index_project_translations_on_project_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.datetime "start_datetime", null: false
-    t.string "title", null: false
-    t.text "preview", null: false
-    t.text "description", null: false
+    t.string "title"
+    t.text "preview"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -81,7 +93,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_185355) do
     t.datetime "updated_at", null: false
     t.string "title", default: "No translation."
     t.string "preview", default: "No translation."
-    t.string "description", default: "No translation."
+    t.text "description", default: "No translation."
     t.index ["locale"], name: "index_service_translations_on_locale"
     t.index ["service_id"], name: "index_service_translations_on_service_id"
   end

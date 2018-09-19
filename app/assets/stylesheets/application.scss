@@ -1,4 +1,5 @@
 /*
+/*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
@@ -151,6 +152,36 @@ hr {
   background-image: none;
   border-color: #343a40;
 }
+
+.service_sidebar{
+  .panel{
+    .panel-body{
+      ul{
+        li{
+          a{
+            img{
+              box-shadow: none;
+            }
+          }
+          p.list-group-item-text{
+            padding-top: 20px;
+          }
+          hr{
+            padding-bottom: 20px;
+            border-color: #ffd6d6;
+          }
+        }
+        li:last-child{
+          hr{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 /*Small devices (landscape phones, 576px and up)*/
 @media screen and (max-width: 768px) {
   .navbar-inverse .navbar-brand {

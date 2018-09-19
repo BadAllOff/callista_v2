@@ -10,12 +10,12 @@
 <div class="container services_list">
   <div class="row">
     <% @service_decorators.each do |service_decorator| %>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-xs-12">
         <div class="card mb-4">
           <%= service_decorator.service_preview_img_thumbnail %>
           <div class="card-body">
-            <p class="card-text" style="height: 84px; overflow: hidden">
-              <%= service_decorator.preview %>
+            <p class="card-text centered" style="height: 84px; overflow: hidden; max-width: 360px; margin: 0 auto;">
+            <%= service_decorator.preview %>
             </p>
             <div class="centered">
               <div class="btn-group">
