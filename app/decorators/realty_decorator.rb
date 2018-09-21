@@ -20,7 +20,7 @@ class RealtyDecorator
   end
 
   def gallery_image image
-    image.variant(combine_options: {thumbnail: "1280x800^", gravity: "center", extent: "1280x800"}).processed
+    image.variant(combine_options: {thumbnail: "1280x800^", gravity: "center"}).processed
   end
 
   def gallery_image_thumbnail image

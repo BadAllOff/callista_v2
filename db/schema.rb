@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_234827) do
+ActiveRecord::Schema.define(version: 2018_09_19_014051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 2018_09_18_234827) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description", null: false
+  end
+
+  create_table "country_translations", force: :cascade do |t|
+    t.integer "country_id", null: false
+    t.string "locale", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name", default: "No translation"
+    t.text "description", default: "No translation"
+    t.index ["country_id"], name: "index_country_translations_on_country_id"
+    t.index ["locale"], name: "index_country_translations_on_locale"
   end
 
   create_table "project_translations", force: :cascade do |t|

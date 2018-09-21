@@ -2,6 +2,8 @@ module PreviewImageValidatable
   extend ActiveSupport::Concern
 
   included do
+    has_one_attached :preview_img
+
     validate :preview_img_type
 
     private

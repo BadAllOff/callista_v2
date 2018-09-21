@@ -9,10 +9,10 @@ class WelcomeController < ApplicationController
   private
 
   def last_projects
-    Project.limit(5).order('id desc')
+    Project.limit(3).order('id desc')
   end
 
   def last_realties
-    Realty.limit(5).order('id desc')
+    Realty.limit(3).order('id desc')
   end
 end

@@ -20,6 +20,7 @@
         <%= link_to t('shared.back'), country_realties_path(@country), class: "btn btn-sm btn-outline-secondary" %>
         <%= @realty_decorator.link_to_edit %>
         <%= @realty_decorator.link_to_destroy %>
+        <%= link_to t('realty.new.add_realty'), new_country_realty_path(params[:country_id]), class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
       </div>
     </div>
     <div class="col-md-4">

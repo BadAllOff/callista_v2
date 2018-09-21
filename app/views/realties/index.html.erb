@@ -12,22 +12,22 @@
   <h1><%= t('realty.list_of_realties') %></h1>
   <% @realties_decorators.each do |realty_decorator| %>
     <div class="row">
-    <div class="col-md-7">
-        <%= realty_decorator.main_preview_img %>
-    </div>
-    <div class="col-md-5">
-      <h3><%= realty_decorator.title %></h3>
-      <div>
-        <%= strip_tags(realty_decorator.preview) %>
+      <div class="col-md-7">
+          <%= realty_decorator.main_preview_img %>
       </div>
-      <br>
-      <div class="btn-group">
-        <%= realty_decorator.link_to_show %>
-        <%= realty_decorator.link_to_edit %>
-        <%= realty_decorator.link_to_destroy %>
+      <div class="col-md-5">
+        <h3><%= realty_decorator.title %></h3>
+        <div>
+          <%= strip_tags(realty_decorator.preview) %>
+        </div>
+        <br>
+        <div class="btn-group">
+          <%= realty_decorator.link_to_show %>
+          <%= realty_decorator.link_to_edit %>
+          <%= realty_decorator.link_to_destroy %>
+        </div>
       </div>
     </div>
-  </div>
     <hr>
   <% end %>
 

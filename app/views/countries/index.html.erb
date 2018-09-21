@@ -12,12 +12,12 @@
   <div class="row">
     <% if !@countries_decorators.blank? %>
       <% @countries_decorators.each do |country_decorator| %>
-        <div class="col-md-4">
+        <div class="col-sm-12 col-md-6">
           <div class="project_list_item">
-            <%= country_decorator.flag_thumbnail %>
+            <%= country_decorator.preview_image_thumb %>
             <div class="card-body">
               <p class="card-text centered">
-                <%= country_decorator.name %>
+                <%= country_decorator.flag_thumbnail %> <%= country_decorator.name %>
               </p>
               <div class="centered">
                 <div class="btn-group centered">
