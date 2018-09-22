@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   scope '(:locale)', locale: /#{I18n.available_locales.join('|')}/ do
     devise_for :users
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
     end
 
     match '/contacts', to: 'contacts#new', via: 'get'
-    resources 'contacts', only: [:new, :create]
+    resources 'contacts', only: %i[new create]
     root 'welcome#index'
   end
 end

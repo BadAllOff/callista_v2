@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -26,8 +28,7 @@ module CallistaV2
                        controller_spec: true
       g.fixtures_replacement :factory_bot, dir: 'spec/factories'
 
-      config.autoload_paths += %W( #{config.root}/app/decorators)
+      config.autoload_paths += %W[#{config.root}/app/decorators]
     end
-
   end
 end

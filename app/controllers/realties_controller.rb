@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class RealtiesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: %i[index show]
   before_action :set_country
-  before_action :set_realty, only: [:show, :edit, :update, :destroy]
+  before_action :set_realty, only: %i[show edit update destroy]
   before_action :set_realties, only: [:show]
 
   # GET countries/1/realties
@@ -21,8 +23,7 @@ class RealtiesController < ApplicationController
   end
 
   # GET countries/1/realties/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST countries/1/realties
   def create
@@ -52,20 +53,22 @@ class RealtiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_country
-      @country = Country.find(params[:country_id])
-    end
 
-    def set_realty
-      @realty = @country.realties.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_country
+    @country = Country.find(params[:country_id])
+  end
 
-    def set_realties
-      @realties = @country.realties.order('id desc').all.limit(10)
-    end
-    # Only allow a trusted parameter "white list" through.
-    def realty_params
-      params.require(:realty).permit(:title, :preview, :description, :preview_img, images: [])
-    end
+  def set_realty
+    @realty = @country.realties.find(params[:id])
+  end
+
+  def set_realties
+    @realties = @country.realties.order('id desc').all.limit(10)
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def realty_params
+    params.require(:realty).permit(:title, :preview, :description, :preview_img, images: [])
+  end
 end

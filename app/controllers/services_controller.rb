@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class ServicesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_service, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_service, only: %i[show edit update destroy]
   before_action :set_recommended_services, only: [:show]
 
   # GET /services
@@ -22,8 +24,7 @@ class ServicesController < ApplicationController
   end
 
   # GET /services/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /services
   # POST /services.json
@@ -66,17 +67,18 @@ class ServicesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_service
-      @service = Service.find(params[:id])
-    end
 
-    def set_recommended_services
-      @recommended_services = Service.order('id desc').all.where.not(id: params[:id]).limit(10)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_service
+    @service = Service.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def service_params
-      params.require(:service).permit(:title, :preview, :description, :preview_img)
-    end
+  def set_recommended_services
+    @recommended_services = Service.order('id desc').all.where.not(id: params[:id]).limit(10)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def service_params
+    params.require(:service).permit(:title, :preview, :description, :preview_img)
+  end
 end

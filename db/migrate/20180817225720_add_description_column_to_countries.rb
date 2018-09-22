@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddDescriptionColumnToCountries < ActiveRecord::Migration[5.2]
   class Country < ApplicationRecord; end
   def self.up

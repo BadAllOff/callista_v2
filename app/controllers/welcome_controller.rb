@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class WelcomeController < ApplicationController
-  layout "landing"
+  layout 'landing'
 
   def index
     @last_projects_decorators = last_projects.map { |project| ProjectDecorator.new(project, view_context) }

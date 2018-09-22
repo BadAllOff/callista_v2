@@ -1,13 +1,14 @@
+# frozen_string_literal: true
+
 class CreateTranslationTableForCountries < ActiveRecord::Migration[5.2]
   def change
     reversible do |dir|
       dir.up do
         Country.create_translation_table!({
-                                           :name => :string,
-                                           :description => :text
-                                       }, {
-                                           :migrate_data => true
-                                       })
+                                            name: :string,
+                                            description: :text
+                                          },
+                                          migrate_data: true)
       end
 
       dir.down do

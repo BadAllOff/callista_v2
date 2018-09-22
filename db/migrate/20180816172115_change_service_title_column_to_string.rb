@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeServiceTitleColumnToString < ActiveRecord::Migration[5.2]
   class Service < ApplicationRecord; end
   def up
