@@ -54,6 +54,7 @@ gem 'mail_form', '~> 1.7.1'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'nested_scaffold', '~> 1.0.0'
 gem 'rails-i18n', '~> 5.1'
+gem 'unicorn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -72,6 +73,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 group :test do

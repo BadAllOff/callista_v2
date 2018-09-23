@@ -32,3 +32,7 @@ development:
 test:
   <<: *default
   database: callista_v2_test
+
+production:
+  <<: *default
+  database: callista_v2_production

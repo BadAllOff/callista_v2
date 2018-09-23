@@ -1,6 +1,6 @@
 @import "imagehover";
 #headerwrap{
-  background: url("bg.png") no-repeat center top;
+  background: asset_url("bg.png") no-repeat center top;
   /*background-position: center;*/
   background-color: #000000;
   margin-top: -10px;
