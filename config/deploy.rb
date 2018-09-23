@@ -6,6 +6,7 @@ set :repo_url, 'https://github.com/BadAllOff/callista_v2.git'
 set :deploy_to, '/opt/www/callista'
 set :user, 'deploy'
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets storage public/system public/uploads public/ckeditor_assets}
+append :linked_files, 'config/master.key', 'config/database.yml'
 
 namespace :deploy do
   %w[start stop restart].each do |command|
