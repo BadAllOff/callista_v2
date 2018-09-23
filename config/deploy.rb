@@ -1,11 +1,13 @@
+# frozen_string_literal: true
+
 # config valid for current version and patch releases of Capistrano
-lock "~> 3.11.0"
+lock '~> 3.11.0'
 
 set :application, 'callista'
 set :repo_url, 'https://github.com/BadAllOff/callista_v2.git'
 set :deploy_to, '/opt/www/callista'
 set :user, 'deploy'
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets storage public/system public/uploads public/ckeditor_assets}
+set :linked_dirs, %w[log tmp/pids tmp/cache tmp/sockets storage public/system public/uploads public/ckeditor_assets]
 append :linked_files, 'config/master.key', 'config/database.yml'
 
 namespace :deploy do
