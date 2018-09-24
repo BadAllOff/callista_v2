@@ -67,6 +67,8 @@ az:
     address: 'Ünvan: Azərbaycan, Bakı, Mehdi Mehdizadə 21 küc., AZ 1025'
     phone_whatsapp: 'Telefon\Whatsapp: +99455 2818001'
     email_html: 'Email: callistabaku&#64;gmail.com'
+    thank_you_for_your_message_we_will_contact_you_soon: 'Mesajınız üçün təşəkkür edirik. Tezliklə sizinlə əlaqə saxlayacağıq!'
+    cannot_send_message: 'Mesajı göndərmək olmur. Xahiş edirik daha sonra yenidən cəhd edin.'
   shared:
     edit: "Редактировать"
     destroy: "Удалить"

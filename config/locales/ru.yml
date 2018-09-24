@@ -71,6 +71,8 @@ ru:
     address: 'Адрес: Азербайджан, г.Баку , ул. Мехди Мехдизаде 21, AZ 1025'
     phone_whatsapp: 'Телефон\Whatsapp: +99455 2818001'
     email_html: 'Email: callistabaku&#64;gmail.com'
+    thank_you_for_your_message_we_will_contact_you_soon: 'Благодарим за Ваше сообщение. Мы скоро с вами свяжемся!'
+    cannot_send_message: 'Что то пошло не так. Невозможно отправить сообщение. Пожалуйста попробуйте позже.'
   shared:
     edit: "Редактировать"
     destroy: "Удалить"
