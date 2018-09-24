@@ -15,6 +15,11 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require ckeditor/config
+//= require ckeditor/plugins/wordcount/plugin
+//= require ckeditor/plugins/wordcount/lang/en
+//= require ckeditor/plugins/wordcount/lang/ru
+//= require ckeditor/plugins/wordcount/lang/az
 //= require magnific-popup
 //= require libs/bootstrap-filestyle
 //= require_tree .

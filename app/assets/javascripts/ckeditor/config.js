@@ -8,8 +8,6 @@ CKEDITOR.editorConfig = function (config) {
   config.filebrowserImageUploadUrl = "/ckeditor/pictures";
   config.filebrowserUploadUrl = "/ckeditor/attachment_files";
 
-  config.height = 600;
-
   config.filebrowserParams = function() {
     var csrf_param, csrf_token, i, meta, metas, params;
     csrf_token = void 0;
@@ -67,4 +65,14 @@ CKEDITOR.editorConfig = function (config) {
       }
     }
   });
+};
+
+CKEDITOR.editorConfig = function (config) {
+  config.extraPlugins = 'wordcount';
+  config.wordcount = {
+    // Whether or not you want to show the Word Count
+    showWordCount: true,
+    // Whether or not you want to show the Char Count
+    showCharCount: true,
+  };
 };
