@@ -78,30 +78,30 @@ Answer a few short questions and we can help you find the right solution for you
     upload_file: 'Upload one file'
     upload_files: "Upload multiple files"
   helpers:
-      submit:
-        create: "Create"
-        update: "Update"
-        submit: "Submit"
-        country:
-          create: "Create country"
-          update: "Update country"
-          submit: "Submit country"
-        service:
-          create: "Create service"
-          update: "Update service"
-          submit: "Submit service"
-        project:
-          create: "Create project"
-          update: "Update project"
-          submit: "Submit project"
-        realty:
-          create: "Create realty"
-          update: "Update realty"
-          submit: "Submit realty"
-        contact:
-          create: "Send message"
-          update: "Edit message"
-          submit: "Submit message"
+    submit:
+      create: "Create"
+      update: "Update"
+      submit: "Submit"
+      country:
+        create: "Create country"
+        update: "Update country"
+        submit: "Submit country"
+      service:
+        create: "Create service"
+        update: "Update service"
+        submit: "Submit service"
+      project:
+        create: "Create project"
+        update: "Update project"
+        submit: "Submit project"
+      realty:
+        create: "Create realty"
+        update: "Update realty"
+        submit: "Submit realty"
+      contact:
+        create: "Send message"
+        update: "Edit message"
+        submit: "Submit message"
   activerecord:
     models:
       service: 'Service'
@@ -142,3 +142,19 @@ Answer a few short questions and we can help you find the right solution for you
             preview_img:
               blank: "can't be blank"
               needs_to_be_jpg_jpeg_png: 'needs to be JPEG, JPG or PNG'
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous_html: "&lsaquo; Prev"
+      next_html: "Next &rsaquo;"
+      truncate: "&hellip;"
+    helpers:
+      page_entries_info:
+        one_page:
+          display_entries:
+            zero: "No %{entry_name} found"
+            one: "Displaying <b>1</b> %{entry_name}"
+            other: "Displaying <b>all %{count}</b> %{entry_name}"
+        more_pages:
+          display_entries: "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"

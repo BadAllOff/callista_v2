@@ -4,11 +4,12 @@ class RealtiesController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_country
   before_action :set_realty, only: %i[show edit update destroy]
-  before_action :set_realties, only: [:show]
+  before_action :load_realties_for_sidebar, only: [:show]
+  before_action :load_realties, only: [:index]
 
   # GET countries/1/realties
   def index
-    @realties_decorators = @country.realties.order('id desc').all.map { |realty| RealtyDecorator.new(realty, view_context) }
+    @realties_decorators = load_realties.map { |realty| RealtyDecorator.new(realty, view_context) }
   end
 
   # GET countries/1/realties/1
@@ -63,8 +64,12 @@ class RealtiesController < ApplicationController
     @realty = @country.realties.find(params[:id])
   end
 
-  def set_realties
+  def load_realties_for_sidebar
     @realties = @country.realties.order('id desc').all.limit(10)
+  end
+
+  def load_realties
+    @realties = @country.realties.order('id desc').page(params[:page]).per(5).without_count
   end
 
   # Only allow a trusted parameter "white list" through.

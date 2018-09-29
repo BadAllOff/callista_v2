@@ -31,6 +31,10 @@
     </div>
     <hr>
   <% end %>
-
+  <div class="btn-group">
+    <%= link_to_prev_page @realties, t('views.pagination.previous_html'), class: 'btn btn-outline-danger' %>
+    <%= link_to_next_page @realties, t('views.pagination.next_html'), class: 'btn btn-outline-danger' %>
+  </div>
+  <hr>
   <%= link_to t('realty.new.add_realty'), new_country_realty_path(params[:country_id]), class: "btn btn-sm btn-outline-danger" if user_signed_in? %>
 </div>
