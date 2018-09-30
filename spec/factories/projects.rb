@@ -6,5 +6,8 @@ FactoryBot.define do
     title 'MyString'
     preview 'MyText'
     description 'MyText'
+    after(:build) do |project|
+      project.preview_img.attach(io: File.open(Rails.root.join('spec', 'factories', 'images', 'project.jpg')), filename: 'project.jpeg', content_type: 'image/jpeg')
+    end
   end
 end
