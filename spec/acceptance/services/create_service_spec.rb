@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require_relative '../../acceptance/acceptance_helper'
 
-feature 'Service', '
+feature 'Create Service', '
 In order to add Consulting Services
 to website
 ' do

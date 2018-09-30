@@ -64,7 +64,6 @@ group :development, :test do
   gem 'pry', '~> 0.11.3'
   gem 'rspec-rails', '~> 3.7'
   gem 'rubocop', '~> 0.59.1', require: false
-  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 end
 
 group :development do
@@ -81,9 +80,13 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15', '< 4.0'
-  gem 'selenium-webdriver', '~> 3.14.0'
+  # gem 'selenium-webdriver', '~> 3.14.0'
+  gem 'capybara-webkit', :github => 'thoughtbot/capybara-webkit', :branch => 'master'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
+  gem 'launchy', '~> 2.4.3'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'database_cleaner', '~> 1.7.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
