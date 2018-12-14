@@ -56,6 +56,7 @@ gem 'nested_scaffold', '~> 1.0.0'
 gem 'rails-i18n', '~> 5.1'
 gem 'unicorn'
 gem 'kaminari', '~> 1.1.1'
+gem "loofah", ">= 2.2.3"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
